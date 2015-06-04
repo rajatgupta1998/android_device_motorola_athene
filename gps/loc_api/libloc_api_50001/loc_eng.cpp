@@ -1441,6 +1441,7 @@ struct LocEngInit : public LocMsg {
         // set the capabilities
         mLocEng->adapter->sendMsg(new LocEngSetCapabilities(mLocEng));
         mLocEng->adapter->sendMsg(new LocEngSetSystemInfo(mLocEng));
+        mLocEng->adapter->setGpsLock(1);
     }
     inline void locallog() const
     {
