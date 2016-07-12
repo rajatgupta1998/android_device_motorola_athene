@@ -112,6 +112,9 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu6/online 1
     write /sys/devices/system/cpu/cpu7/online 1
 
+    # Enable LPM Prediction
+    write /sys/module/lpm_levels/parameters/lpm_prediction 1
+
     # Enable Low power modes
     write /sys/module/lpm_levels/parameters/sleep_disabled 0
 
