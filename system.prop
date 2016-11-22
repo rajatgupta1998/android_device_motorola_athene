@@ -183,7 +183,10 @@ mm.enable.qcom_parser=135715
 vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.narrow.searchrange=1
 media.camera.ts.monotonic=1
-mm.enable.sec.smoothstreaming=false
+mm.enable.sec.smoothstreaming=false 
+
+# Miracast
+persist.debug.wfd.enable=1
 
 # GPS
 persist.mot.gps.conf.from.sim=true
