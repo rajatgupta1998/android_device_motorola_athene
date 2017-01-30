@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
     camera.device@3.2-impl \
     android.hardware.camera.provider@2.4-impl
 
+# Disable camera Treble path
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera.disable_treble=true
+ 
 # CMActions
 PRODUCT_PACKAGES += \
     CMActions
