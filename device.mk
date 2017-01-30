@@ -115,6 +115,10 @@ PRODUCT_PACKAGES += \
     libbson \
     Snap
 
+# Disable camera Treble path
+PRODUCT_PROPERTY_OVERRIDES += \
+    camera.disable_treble=true
+ 
 # CMActions
 PRODUCT_PACKAGES += \
     CMActions
