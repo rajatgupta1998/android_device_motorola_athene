@@ -187,6 +187,7 @@ mm.enable.sec.smoothstreaming=false
 
 # Miracast
 persist.debug.wfd.enable=1
+persist.sys.wft.enable=0
 
 # GPS
 persist.mot.gps.conf.from.sim=true
