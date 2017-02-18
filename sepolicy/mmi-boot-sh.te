@@ -13,3 +13,4 @@ allow mmi-boot-sh shell_exec:file { getattr read };
 allow mmi-boot-sh system_prop:property_service set;
 allow mmi-boot-sh toolbox_exec:file { execute execute_no_trans getattr open read };
 allow mmi-boot-sh utags_block_device:blk_file { open read write };
+allow mmi-boot-sh system_file:file execute_no_trans;
