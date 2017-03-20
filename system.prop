@@ -85,9 +85,6 @@ persist.timed.enable=true
 # CABL
 ro.qualcomm.cabl=0
 
-# SDCard
-ro.sys.sdcardfs=true
-
 # Audio
 af.fast_track_multiplier=1
 audio.offload.buffer.size.kb=64
