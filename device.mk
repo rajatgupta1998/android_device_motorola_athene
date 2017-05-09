@@ -184,7 +184,8 @@ PRODUCT_PACKAGES += \
  
 # HIDL
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
+    $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml \
+    $(LOCAL_PATH)/compatibility_matrix.xml:system/vendor/compatibility_matrix.xml
 
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0
