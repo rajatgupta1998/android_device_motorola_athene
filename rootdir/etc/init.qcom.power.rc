@@ -61,7 +61,6 @@ on enable-low-power
     write /sys/class/devfreq/qcom,gpubw.38/bw_hwmon/io_percent 40
 
     # disable thermal & BCL core_control to update interactive gov settings
-    write /sys/module/msm_thermal/core_control/enabled 0
     write /sys/devices/soc.0/qcom,bcl.57/mode "disable"
     write /sys/devices/soc.0/qcom,bcl.57/hotplug_mask 0
     write /sys/devices/soc.0/qcom,bcl.57/hotplug_soc_mask 0
@@ -79,7 +78,7 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/use_sched_load 1
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/target_loads "1 960000:85 1094400:90 1344000:80"
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 40000
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1516000
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/sampling_down_factor 40000
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 960000
 
     # enable governor for power cluster
@@ -91,10 +90,10 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 806400
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 0
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "1 806400:90"
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 40000
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 806400
+    write /sys/devices/system/cpu/cpu0/cpufreq/interactive/sampling_down_factor 40000
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 800000
 
     # enable thermal & BCL core_control now
     write /sys/module/msm_thermal/core_control/enabled 1
@@ -127,10 +126,6 @@ on enable-low-power
     write /proc/sys/kernel/sched_freq_inc_notify 50000
     write /proc/sys/kernel/sched_freq_dec_notify 50000
 
-    # Input boost config
-    write /sys/module/cpu_boost/parameters/input_boost_freq 1094400
-    write /sys/module/cpu_boost/parameters/input_boost_ms 40
-
     # Enable core control
     write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 2
     write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
@@ -138,6 +133,15 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 40
     write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 100
     write /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster 1
+    write /sys/devices/system/cpu/cpu4/core_ctl/min_cpus 1
+    write /sys/devices/system/cpu/cpu4/core_ctl/max_cpus 4
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_up_thres 68
+    write /sys/devices/system/cpu/cpu4/core_ctl/busy_down_thres 40
+    write /sys/devices/system/cpu/cpu4/core_ctl/offline_delay_ms 100
+    write /sys/devices/system/cpu/cpu4/core_ctl/is_big_cluster 1
+
+    # Re-enable thermal
+    write /sys/module/msm_thermal/core_control/enabled 1
 
     # RPS
     write /sys/class/net/rmnet_ipa0/queues/rx-0/rps_cpus "f0"
@@ -146,19 +150,6 @@ on enable-low-power
     write /sys/module/lpm_levels/lpm_workarounds/dynamic_clock_gating 1
     # Enable timer migration to little cluster
     write /proc/sys/kernel/power_aware_timer_migration 1
-
-    # Process reclaim
-    write /sys/module/process_reclaim/parameters/enable_process_reclaim 1
-    write /sys/module/process_reclaim/parameters/pressure_min 10
-    write /sys/module/process_reclaim/parameters/per_swap_size 1024
-    write /sys/module/process_reclaim/parameters/pressure_max 70
-    write /sys/module/process_reclaim/parameters/swap_opt_eff 30
-
-    write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
-    write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
-
-    # Set idle GPU to 240 Mhz
-    write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 4
 
     # Set perfd properties
     rm /data/system/perfd/default_values
