@@ -218,6 +218,8 @@ PRODUCT_PACKAGES += \
     init.qcom.power.rc \
     init.qcom.rc \
     init.qcom.ril.sh \
+    init.spectrum.rc \
+    init.spectrum.sh \
     ueventd.qcom.rc
 
 # RIL
