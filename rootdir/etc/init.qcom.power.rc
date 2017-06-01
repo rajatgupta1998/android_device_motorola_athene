@@ -1,3 +1,6 @@
+## Import spectrum profiles
+import /init.spectrum.rc
+
 on early-init
     # boot with higher frequency, will be reset after boot
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1516800
