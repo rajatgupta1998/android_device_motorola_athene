@@ -104,8 +104,13 @@ PRODUCT_COPY_FILES +=  \
 # Camera
 PRODUCT_PACKAGES += \
     camera.msm8952 \
-    libbson \
-    Snap
+    libbson
+
+# Moto Camera
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/prebuilts/apps/MotCamera.apk:system/priv-app/MotCamera/MotCamera.apk \
+    $(LOCAL_PATH)/prebuilts/libs/libjni_mot_mosaic.so:system/priv-app/MotCamera/lib/arm/libjni_mot_mosaic.so \
+    $(LOCAL_PATH)/prebuilts/libs/libMobileOcrEngine.so:system/priv-app/MotCamera/lib/arm/libMobileOcrEngine.so
 
 # Gestures
 PRODUCT_PACKAGES += \
