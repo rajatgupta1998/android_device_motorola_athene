@@ -304,7 +304,6 @@ on fs
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
     
     mount_all ./fstab.qcom
-    swapon_all ./fstab.qcom
 
     # Mount customize partion
     wait /dev/block/bootdevice/by-name/customize
@@ -1136,3 +1135,7 @@ on moto-charger
     setprop ro.board.platform msm8952
     start charge_only_mode
     start thermal-com
+
+on property:sys.boot_completed=1
+    # Enable ZRAM on boot_complete
+    swapon_all ./fstab.qcom
