@@ -213,9 +213,6 @@ ro.vendor.extension_library=libqti-perfd-client.so
 # Fingerprint
 persist.qfp=false
 
-# DEX
-ro.sys.fw.dex2oat_thread_count=4
-
 persist.dpm.feature=0
 
 # Trim properties
