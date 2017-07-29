@@ -588,7 +588,6 @@ on property:persist.sys.ssr.enable_ramdumps=0
     write /sys/module/subsystem_restart/parameters/enable_ramdumps 0
 
 on property:sys.boot_completed=1
-    start batt_health
     start emmc_ffu
     start mbm_spy
     start mmi-laser-sh
@@ -919,12 +918,6 @@ on property:hw.touch.status="dead"
 on property:hw.touch.status="ready"
     # start touch-ready-sh
 
-service batt_health /system/bin/batt_health
-    class late_start
-    user mot_pwric
-    group mot_pwric cache net_admin log
-    disabled
-
 service charge_only_mode /system/bin/charge_only_mode
     user root
     group graphics system input
@@ -1130,5 +1123,4 @@ on charger
 on moto-charger
     setprop ro.board.platform msm8952
     start charge_only_mode
-    start batt_health
     start thermal-com
