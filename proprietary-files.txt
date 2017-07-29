@@ -898,7 +898,6 @@ vendor/lib/libxtadapter.so
 vendor/lib/libxt_native.so
 
 # Moto
-bin/batt_health
 bin/charge_only_mode
 bin/cnd
 bin/dbvc_atvc_property_set
