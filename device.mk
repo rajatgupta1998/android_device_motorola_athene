@@ -220,6 +220,7 @@ PRODUCT_PACKAGES += \
     init.qcom.ril.sh \
     init.spectrum.rc \
     init.spectrum.sh \
+    wlan_carrier_bin.sh \
     ueventd.qcom.rc
 
 # RIL
@@ -256,18 +257,24 @@ PRODUCT_PACKAGES += \
     wpa_supplicant_overlay.conf
 
 PRODUCT_PACKAGES += \
-    WCNSS_wlan_dictionary.dat
-
-PRODUCT_PACKAGES += \
     libcurl \
     libqsap_sdk \
     libQWiFiSoftApCfg \
     tcpdump \
     wcnss_service
 
+# Wifi Symlinks
+PRODUCT_PACKAGES += \
+    WCNSS_qcom_cfg.ini \
+    WCNSS_qcom_wlan_nv.bin \
+    WCNSS_qcom_wlan_nv_Argentina.bin \
+    WCNSS_qcom_wlan_nv_Brazil.bin \
+    WCNSS_qcom_wlan_nv_India.bin \
+    WCNSS_wlan_dictionary.dat
+
 PRODUCT_COPY_FILES += \
-    kernel/motorola/msm8952/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
-    kernel/motorola/msm8952/drivers/staging/prima/firmware_bin/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
+    kernel/motorola/athene/drivers/staging/prima/firmware_bin/WCNSS_cfg.dat:system/etc/firmware/wlan/prima/WCNSS_cfg.dat \
+    $(LOCAL_PATH)/wifi/WCNSS_qcom_cfg.ini:system/etc/firmware/wlan/prima/WCNSS_qcom_cfg.ini
 
 # Input configuration
 PRODUCT_COPY_FILES += \
