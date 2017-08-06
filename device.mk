@@ -107,19 +107,6 @@ PRODUCT_PACKAGES += \
     libbson \
     Snap
 
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_cpp_liveshot.so:system/vendor/lib/libchromatix_mot_imx258_cpp_liveshot.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_cpp_preview.so:system/vendor/lib/libchromatix_mot_imx258_cpp_preview.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_cpp_snapshot.so:system/vendor/lib/libchromatix_mot_imx258_cpp_snapshot.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_cpp_video.so:system/vendor/lib/libchromatix_mot_imx258_cpp_video.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_cpp_video_4k.so:system/vendor/lib/libchromatix_mot_imx258_cpp_video_4k.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_default_video.so:system/vendor/lib/libchromatix_mot_imx258_default_video.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_ihdr_video_4k.so:system/vendor/lib/libchromatix_mot_imx258_ihdr_video_4k.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_preview.so:system/vendor/lib/libchromatix_mot_imx258_preview.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_snapshot.so:system/vendor/lib/libchromatix_mot_imx258_snapshot.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libchromatix_mot_imx258_video_4k.so:system/vendor/lib/libchromatix_mot_imx258_video_4k.so \
-    $(LOCAL_PATH)/prebuilt/vendor/libmmcamera_mot_imx258.so:system/vendor/lib/libmmcamera_mot_imx258.so
-
 # Gestures
 PRODUCT_PACKAGES += \
     Gestures
