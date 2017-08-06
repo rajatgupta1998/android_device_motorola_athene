@@ -185,6 +185,7 @@ vidc.enc.narrow.searchrange=1
 media.camera.ts.monotonic=1
 mm.enable.sec.smoothstreaming=false
 ro.media.dec.jpeg.memcap=8000000 
+ro.media.enc.hprof.vid.bps=8000000
 
 # Miracast
 persist.debug.wfd.enable=1
