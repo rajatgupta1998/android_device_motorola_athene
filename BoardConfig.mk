@@ -145,6 +145,10 @@ ENABLE_SCHED_BOOST := true
 # Lights
 TARGET_PROVIDES_LIBLIGHT := true
 
+# Manifest
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+
 # Properties
 TARGET_SYSTEM_PROP += device/motorola/athene/system.prop
 
