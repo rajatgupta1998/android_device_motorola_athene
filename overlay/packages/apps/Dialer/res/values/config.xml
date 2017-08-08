@@ -1,10 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<!-- Copyright (C) 2016 The CyanogenMod Project
-=======
 <!--
      Copyright (C) 2016 The CyanogenMod Project
->>>>>>> 789a5dc... bacon: Enable call recording
+     Copyright (C) 2017 The LineageOS Project
 
      Licensed under the Apache License, Version 2.0 (the "License");
      you may not use this file except in compliance with the License.
@@ -20,12 +17,9 @@
 -->
 <resources>
     <bool name="call_recording_enabled">true</bool>
-<<<<<<< HEAD
+    <integer name="call_recording_audio_source">4</integer>
 
     <!-- Determines the maximum number of buttons visible on the call card.  Any buttons over this
          count are put into the overflow menu. -->
     <integer name="call_card_max_buttons">6</integer>
-=======
-    <integer name="call_recording_audio_source">4</integer>
->>>>>>> 789a5dc... bacon: Enable call recording
 </resources>
