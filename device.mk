@@ -229,6 +229,12 @@ PRODUCT_PACKAGES += \
 
 # Ramdisk
 PRODUCT_PACKAGES += \
+    init.mmi.touch.sh \
+    init.qcom.ril.sh \
+    init.qcom.bt.sh \
+    init.qcom.fm.sh \
+    wlan_carrier_bin.sh \
+    init.livedisplay.sh \
     fstab.qcom \
     init.mmi.boot.sh \
     init.mmi.laser.sh \
