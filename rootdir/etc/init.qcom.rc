@@ -1110,6 +1110,14 @@ service audiod /system/bin/audiod
     user system
     group system
 
+service stopld /system/bin/sh /init.livedisplay.sh
+    class main
+    user root
+    oneshot
+
+on property:sys.boot_completed=1
+    start stopld
+
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
