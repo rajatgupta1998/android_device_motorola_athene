@@ -297,6 +297,7 @@ PRODUCT_PACKAGES += \
     hostapd \
     wpa_supplicant \
     wificond \
+    wifilogd \
     wpa_supplicant.conf
 
 PRODUCT_PACKAGES += \
@@ -309,8 +310,6 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     android.hardware.wifi@1.0-service \
     libcurl \
-    libqsap_sdk \
-    libQWiFiSoftApCfg \
     tcpdump \
     wcnss_service
 
