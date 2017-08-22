@@ -35,6 +35,8 @@
 #include <stdlib.h>
 #include <stdint.h>
 
+extern "C" {
+
 typedef struct list_element {
    struct list_element* next;
    struct list_element* prev;
@@ -325,3 +327,4 @@ linked_list_err_type linked_list_search(void* list_data, void **data_p,
    return eLINKED_LIST_SUCCESS;
 }
 
+}

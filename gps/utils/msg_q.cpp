@@ -35,6 +35,8 @@
 #include <stdlib.h>
 #include <pthread.h>
 
+extern "C" {
+
 typedef struct msg_q {
    void* msg_list;                  /* Linked list to store information */
    pthread_cond_t  list_cond;       /* Condition variable for waiting on msg queue */
@@ -332,4 +334,6 @@ msq_q_err_type msg_q_unblock(void* msg_q_data)
    LOC_LOGD("%s: Message Queue unblocked\n", __FUNCTION__);
 
    return eMSG_Q_SUCCESS;
+}
+
 }
