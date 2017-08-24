@@ -162,10 +162,6 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
-# For android_filesystem_config.h
-PRODUCT_PACKAGES += \
-    fs_config_files
-
 # Memtrack HAL
 PRODUCT_PACKAGES += \
     android.hardware.memtrack@1.0-impl
