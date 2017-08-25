@@ -30,10 +30,12 @@
 #include <sys/_system_properties.h>
 #include <stdio.h>
 
-#include "vendor_init.h"
+#include "android-base/properties.h"
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include "vendor_init.h"
+
+namespace android {
+namespace init {
 
 static void num_sims(void);
 static void target_ram(void);
@@ -60,18 +62,18 @@ void vendor_load_properties()
     std::string device;
     std::string carrier;
 
-    platform = property_get("ro.board.platform");
+    platform = android::base::GetProperty("ro.board.platform", "");
     if (platform != ANDROID_TARGET)
         return;
 
-    device_boot = property_get("ro.boot.device");
+    device_boot = android::base::GetProperty("ro.boot.device", "");
     property_set("ro.hw.device", device_boot.c_str());
 
-    sku = property_get("ro.boot.hardware.sku");
+    sku = android::base::GetProperty("ro.boot.hardware.sku", "");
 
-    carrier = property_get("ro.boot.carrier");
+    carrier = android::base::GetProperty("ro.boot.carrier", "");
 
-    radio = property_get("ro.boot.radio");
+    radio = android::base::GetProperty("ro.boot.radio", "");
     property_set("ro.hw.radio", radio.c_str());
 
     /* Common for all models */
@@ -122,7 +124,7 @@ void vendor_load_properties()
 static void target_ram(void) {
     std::string ram;
 
-    ram = property_get("ro.boot.ram");
+    ram = android::base::GetProperty("ro.boot.ram", "");
 
     if (ram == "2GB") {
         property_set("dalvik.vm.heapstartsize", "8m");
@@ -168,7 +170,7 @@ static void target_ram(void) {
 static void num_sims(void) {
     std::string dualsim;
 
-    dualsim = property_get("ro.boot.dualsim");
+    dualsim = android::base::GetProperty("ro.boot.dualsim", "");
 
     property_set("ro.hw.dualsim", dualsim.c_str());
 
@@ -178,4 +180,7 @@ static void num_sims(void) {
     } else {
         property_set("persist.radio.multisim.config", "");
     }
+}
+
+}
 }
