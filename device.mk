@@ -161,6 +161,7 @@ PRODUCT_PACKAGES += \
 # GPS
 PRODUCT_PACKAGES += \
     gps.msm8952 \
+    libshims_get_process_name \
     libgnsspps
 
 PRODUCT_COPY_FILES += \
