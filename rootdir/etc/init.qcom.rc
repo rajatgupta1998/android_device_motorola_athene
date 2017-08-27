@@ -299,8 +299,8 @@ on boot
     chown wifi wifi /sys/module/wlan/parameters/fwpath
 
 on fs
-    wait /dev/block/platform/soc/${ro.boot.bootdevice}
-    symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
+    wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
+    symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
     
     mount_all ./fstab.qcom
     swapon_all ./fstab.qcom
