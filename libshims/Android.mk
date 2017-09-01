@@ -1,4 +1,5 @@
 # Copyright (C) 2016 The CyanogenMod Project
+# Copyright (C) 2017 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -48,5 +49,12 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES := sensor.cpp
 LOCAL_SHARED_LIBRARIES := libgui libsensor
 LOCAL_MODULE := libshim_ril
+LOCAL_MODULE_TAGS := optional
+include $(BUILD_SHARED_LIBRARY)
+
+include $(CLEAR_VARS)
+LOCAL_SRC_FILES := MediaCodec.cpp
+LOCAL_SHARED_LIBRARIES := libstagefright libmedia
+LOCAL_MODULE := libshims_camera
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_SHARED_LIBRARY)
