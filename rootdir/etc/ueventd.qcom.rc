@@ -54,10 +54,10 @@
 /dev/block/bootdevice/by-name/frp 0600 system system
 
 # Block devices
-/dev/block/bootdevice/by-name/clogo        0660 root mot_tcmd
-/dev/block/bootdevice/by-name/cid          0660 root mot_tcmd
-/dev/block/bootdevice/by-name/utags        0660 mot_tcmd system
-/dev/block/bootdevice/by-name/utagsBackup  0660 mot_tcmd system
+/dev/block/bootdevice/by-name/clogo        0660 root oem_5004
+/dev/block/bootdevice/by-name/cid          0660 root oem_5004
+/dev/block/bootdevice/by-name/utags        0660 oem_5004 system
+/dev/block/bootdevice/by-name/utagsBackup  0660 oem_5004 system
 
 #permissions for CSVT
 /dev/smd11                0660   radio      radio
@@ -273,7 +273,7 @@
 /dev/stml0xx_ms            0660  compass    compass
 
 #DTV
-/dev/isdbt                 0660 mot_dtv  mot_dtv
+/dev/isdbt                 0660 oem_5019  oem_5019
 
 # Laser device
 /dev/laser                 0660   system     camera
