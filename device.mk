@@ -161,6 +161,10 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     keystore.msm8952
 
+# Bluetooth
+PRODUCT_PACKAGES += \
+    android.hardware.bluetooth@1.0-impl
+
 # Keymaster HAL
 PRODUCT_PACKAGES += \
     android.hardware.keymaster@3.0-impl
