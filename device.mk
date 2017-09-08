@@ -282,6 +282,7 @@ PRODUCT_PACKAGES += \
     WCNSS_wlan_dictionary.dat
 
 PRODUCT_PACKAGES += \
+    android.hardware.wifi@1.0-service \
     libcurl \
     libqsap_sdk \
     libQWiFiSoftApCfg \
