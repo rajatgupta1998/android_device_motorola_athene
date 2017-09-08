@@ -661,7 +661,7 @@ vendor/lib/liboemcrypto.so
 
 # Fingerprint
 bin/fingerprintd
-lib/hw/fingerprint.msm8952.so
+lib/hw/fingerprint.msm8952.so:lib/hw/fingeprint.vendor.msm8952.so
 lib/libcom_fingerprints_service.so
 
 # Firmware
