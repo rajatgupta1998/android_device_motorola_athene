@@ -34,9 +34,6 @@
 #include "property_service.h"
 #include "vendor_init.h"
 
-namespace android {
-namespace init {
-
 static void num_sims(void);
 static void target_ram(void);
 
@@ -82,17 +79,17 @@ void vendor_load_properties()
 
     if (device_boot == "athene_13mp") {
         /* Moto G4 (XT162x) */
-        property_override("ro.product.device", "athene");
-        property_override("ro.build.description", "athene-user 7.0 NPJ25.93-14 16 release-keys");
-        property_override("ro.build.fingerprint", "motorola/athene/athene:7.0/NPJ25.93-14/16:user/release-keys");
-        property_override("ro.product.model", "Moto G4");
+        property_set("ro.product.device", "athene");
+        property_set("ro.build.description", "athene-user 7.0 NPJ25.93-14 16 release-keys");
+        property_set("ro.build.fingerprint", "motorola/athene/athene:7.0/NPJ25.93-14/16:user/release-keys");
+        property_set("ro.product.model", "Moto G4");
         property_set("ro.telephony.default_network", "10");
     } else {
         /* Moto G4 Plus (XT164x) */
-        property_override("ro.product.device", "athene_f");
-        property_override("ro.build.description", "athene_f-user 7.0 NPJ25.93-14 16 release-keys");
-        property_override("ro.build.fingerprint", "motorola/athene_f/athene_f:7.0/NPJ25.93-14/16:user/release-keys");
-        property_override("ro.product.model", "Moto G4 Plus");
+        property_set("ro.product.device", "athene_f");
+        property_set("ro.build.description", "athene_f-user 7.0 NPJ25.93-14 16 release-keys");
+        property_set("ro.build.fingerprint", "motorola/athene_f/athene_f:7.0/NPJ25.93-14/16:user/release-keys");
+        property_set("ro.product.model", "Moto G4 Plus");
         property_set("ro.telephony.default_network", "10,0");
     }
 
@@ -179,7 +176,4 @@ static void num_sims(void) {
     } else {
         property_set("persist.radio.multisim.config", "");
     }
-}
-
-}
 }
