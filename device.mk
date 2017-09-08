@@ -133,6 +133,10 @@ PRODUCT_PACKAGES += \
     ethertypes \
     libebtc
 
+# Fingerprint
+PRODUCT_PACKAGES += \
+    android.hardware.biometrics.fingerprint@2.1-service
+
 # FM
 PRODUCT_PACKAGES += \
     FMRadio \
