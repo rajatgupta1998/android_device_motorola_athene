@@ -684,6 +684,12 @@ on property:wc_transport.start_root=true
 on property:wc_transport.start_root=false
     stop hci_filter_root
 
+service hci_filter_root /system/bin/wcnss_filter
+    class late_start
+    user bluetooth
+    group bluetooth diag system
+    disabled
+ 
 service config_bluetooth /system/bin/sh /init.qcom.bt.sh "onboot"
     class core
     user bluetooth
