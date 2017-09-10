@@ -53,7 +53,6 @@ void property_override(char const prop[], char const value[])
 
 void vendor_load_properties()
 {
-    INFO("Starting custom ini");
 
     std::string platform;
     std::string device_boot;
