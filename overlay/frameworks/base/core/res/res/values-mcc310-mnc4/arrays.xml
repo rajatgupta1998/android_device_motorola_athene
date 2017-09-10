@@ -25,7 +25,7 @@
     <string-array name="config_default_vm_number">
         <item>*86</item>
     </string-array>
-    <string-array name="config_sms_convert_destination_number_support">
+    <!--string-array name="config_sms_convert_destination_number_support">
         <item>true</item>
-    </string-array>
+    </string-array-->
 </resources>
