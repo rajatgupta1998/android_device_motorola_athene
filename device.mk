@@ -121,8 +121,8 @@ PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl
 
 # CMActions
-#PRODUCT_PACKAGES += \
-#    CMActions
+PRODUCT_PACKAGES += \
+    CMActions
 
 # Display
 PRODUCT_PACKAGES += \
