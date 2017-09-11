@@ -829,12 +829,6 @@ service atfwd /system/bin/ATFWD-daemon
     user system
     group system radio
 
-service ril-daemon /vendor/bin/hw/rild
-    class main
-    user radio
-    group radio cache inet misc audio log readproc wakelock diag net_raw
-    capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
-
 service ril-daemon1 /vendor/bin/hw/rild -c 2
     class main
     user radio
