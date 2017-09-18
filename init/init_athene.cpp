@@ -80,15 +80,15 @@ void vendor_load_properties()
     if (device_boot == "athene_13mp") {
         /* Moto G4 (XT162x) */
         property_set("ro.product.device", "athene");
-        property_set("ro.build.description", "athene-user 7.0 NPJ25.93-14 16 release-keys");
-        property_set("ro.build.fingerprint", "motorola/athene/athene:7.0/NPJ25.93-14/16:user/release-keys");
+        property_set("ro.build.description", "athene-user 7.0 NPJS25.93-14-8 8 release-keys");
+        property_set("ro.build.fingerprint", "motorola/athene/athene:7.0/NPJS25.93-14-8/8:user/release-keys");
         property_set("ro.product.model", "Moto G4");
         property_set("ro.telephony.default_network", "10");
     } else {
         /* Moto G4 Plus (XT164x) */
         property_set("ro.product.device", "athene_f");
-        property_set("ro.build.description", "athene_f-user 7.0 NPJ25.93-14 16 release-keys");
-        property_set("ro.build.fingerprint", "motorola/athene_f/athene_f:7.0/NPJ25.93-14/16:user/release-keys");
+        property_set("ro.build.description", "athene_f-user 7.0 NPJS25.93-14-8 8 release-keys");
+        property_set("ro.build.fingerprint", "motorola/athene_f/athene_f:7.0/NPJS25.93-14-8/8:user/release-keys");
         property_set("ro.product.model", "Moto G4 Plus");
         property_set("ro.telephony.default_network", "10,0");
     }
@@ -102,7 +102,7 @@ void vendor_load_properties()
 
     if (sku == "XT1621" || sku == "XT1622" || sku == "XT1640" || sku == "XT1642" || sku == "XT1643") {
         if (radio == "India") {
-            property_set("ro.radio.imei.sv", "8");
+            property_set("ro.radio.imei.sv", "9");
             property_set("persist.radio.is_wps_enabled", "true");
         } else {
             property_set("ro.radio.imei.sv", "3");
