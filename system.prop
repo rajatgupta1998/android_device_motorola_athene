@@ -61,6 +61,9 @@ mdc_initial_max_retry=10
 persist.radio.sar_sensor=1
 persist.radio.call.audio.output=0
 ro.telephony.call_ring.multiple=false
+persist.dbg.volte_avail_ovr=1
+persist.dbg.vt_avail_ovr=1
+persist.dbg.wfc_avail_ovr=1
 
 # Display
 debug.sf.hw=1
