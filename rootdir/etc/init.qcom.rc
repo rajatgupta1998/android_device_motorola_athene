@@ -686,7 +686,7 @@ on property:wc_transport.start_root=false
 service hci_filter_root /system/bin/wcnss_filter
     class late_start
     user bluetooth
-    group bluetooth diag system
+    group bluetooth diag oem_2950
     disabled
  
 service config_bluetooth /system/bin/sh /init.qcom.bt.sh "onboot"
@@ -746,7 +746,7 @@ service ipacm-diag /system/bin/ipacm-diag
     class main
     user system
     socket ipacm_log_file dgram 660 system net_admin
-    group net_admin diag
+    group net_admin oem_2950
 
 service ipacm /system/bin/ipacm
     class main
@@ -757,7 +757,7 @@ service ipacm /system/bin/ipacm
 service qti /system/vendor/bin/qti
     class main
     user radio
-    group radio net_raw diag usb net_admin
+    group radio net_raw oem_2950 usb net_admin
     writepid /dev/cpuset/system-background/tasks
     disabled
 
@@ -814,7 +814,7 @@ service cnss-daemon /system/bin/cnss-daemon -n -l
 service loc_launcher /system/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
-    group gps inet net_raw diag net_admin wifi
+    group gps inet net_raw oem_2950 net_admin wifi
     writepid /dev/cpuset/system-background/tasks
 
 on property:hw.fm.init=1
