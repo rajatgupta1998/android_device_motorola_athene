@@ -166,13 +166,11 @@ on enable-low-power
     rm /data/system/perfd/default_values
     start perfd
 
-on class_start:late_start
-    trigger enable-low-power
-
 on property:init.svc.recovery=running
     trigger enable-low-power
 
 on property:dev.bootcomplete=1
+    trigger enable-low-power
     write /sys/block/dm-0/queue/read_ahead_kb 512
     setprop sys.io.scheduler "cfq"
 
