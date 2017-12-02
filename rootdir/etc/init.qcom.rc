@@ -1112,7 +1112,7 @@ service audiod /system/bin/audiod
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
-    load_all_props
+    load_system_props
     setprop persist.sys.usb.config mass_storage
     write /sys/class/leds/charging/trigger "battery-full"
 
