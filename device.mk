@@ -186,6 +186,9 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/manifest.xml:system/vendor/manifest.xml
 
+PRODUCT_PACKAGES += \
+    android.hidl.base@1.0
+
 # Keystore
 PRODUCT_PACKAGES += \
     keystore.msm8952
