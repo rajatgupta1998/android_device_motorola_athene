@@ -239,6 +239,10 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     netutils-wrapper-1.0
 
+# IMS
+PRODUCT_PACKAGES += \
+    ims-ext-common
+
 # OMX
 PRODUCT_PACKAGES += \
     libc2dcolorconvert \
