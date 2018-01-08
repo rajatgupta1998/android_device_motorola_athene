@@ -28,7 +28,7 @@
 namespace android {
 namespace hardware {
 namespace gnss {
-namespace V1_0 {
+namespace V1_1 {
 namespace implementation {
 
 using ::android::hardware::gnss::V1_0::IGnssBatching;
@@ -72,7 +72,7 @@ struct GnssBatching : public IGnssBatching {
 };
 
 }  // namespace implementation
-}  // namespace V1_0
+}  // namespace V1_1
 }  // namespace gnss
 }  // namespace hardware
 }  // namespace android

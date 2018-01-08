@@ -24,7 +24,7 @@
 namespace android {
 namespace hardware {
 namespace gnss {
-namespace V1_0 {
+namespace V1_1 {
 namespace implementation {
 
 using ::android::hardware::gnss::V1_0::IGnssDebug;
