@@ -14,14 +14,14 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/motorola/athene
+DEVICE_PATH := device/motorola/athene
 
 BOARD_VENDOR := motorola-qcom
 
 # AIDs and CAPS
 TARGET_FS_CONFIG_GEN := \
-    $(LOCAL_PATH)/fs_config/mot_aids.txt \
-    $(LOCAL_PATH)/fs_config/file_caps.txt
+    $(DEVICE_PATH)/fs_config/mot_aids.txt \
+    $(DEVICE_PATH)/fs_config/file_caps.txt
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := athene,athene_f,xt1621,xt1622,xt1625,xt1626,xt1640,xt1641,xt1642,xt1643,xt1644
@@ -94,7 +94,7 @@ BOARD_USES_GENERIC_AUDIO := true
 TARGET_USES_QCOM_MM_AUDIO := true
 
 # Bluetooth
-BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(LOCAL_PATH)/bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(DEVICE_PATH)/bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_QCOM := true
 BLUETOOTH_HCI_USE_MCT := true
@@ -191,7 +191,7 @@ USE_SENSOR_MULTI_HAL := true
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 
@@ -200,7 +200,7 @@ TARGET_USE_SDCLANG := true
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(LOCAL_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
