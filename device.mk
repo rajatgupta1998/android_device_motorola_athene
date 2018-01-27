@@ -186,7 +186,8 @@ PRODUCT_PACKAGES += \
     libshims_ims
 
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0
+    android.hidl.base@1.0 \
+    android.hidl.manager@1.0
 
 # Keystore
 PRODUCT_PACKAGES += \
