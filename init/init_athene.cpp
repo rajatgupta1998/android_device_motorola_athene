@@ -83,14 +83,14 @@ void vendor_load_properties()
         /* Moto G4 (XT162x) */
         property_override("ro.product.device", "athene");
         property_override("ro.build.description", "athene-user 7.0 NPJS25.93-14-13 3 release-keys");
-        property_override("ro.build.fingerprint", "motorola/athene/athene:7.0/NPJS25.93-14-13/3:user/release-keys");
+        property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
         property_override("ro.product.model", "Moto G4");
         property_set("ro.telephony.default_network", "10");
     } else {
         /* Moto G4 Plus (XT164x) */
         property_override("ro.product.device", "athene_f");
         property_override("ro.build.description", "athene_f-user 7.0 NPJS25.93-14-13 3 release-keys");
-        property_override("ro.build.fingerprint", "motorola/athene_f/athene_f:7.0/NPJS25.93-14-13/3:user/release-keys");
+        property_override("ro.build.fingerprint", "google/walleye/walleye:8.1.0/OPM1.171019.011/4448085:user/release-keys");
         property_override("ro.product.model", "Moto G4 Plus");
         property_set("ro.telephony.default_network", "10,0");
     }
