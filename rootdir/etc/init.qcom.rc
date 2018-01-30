@@ -912,6 +912,12 @@ service oem-hw-config-sh /init.oem.hw.sh -p
     oneshot
     disabled
 
+service msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.conf
+    class core
+    user root
+    group root
+    disabled
+
 on property:hw.touch.status="dead"
     # start touch-dead-sh
 
