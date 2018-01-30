@@ -135,6 +135,7 @@ bluetooth.hfp.client=1
 qcom.bluetooth.soc=smd
 ro.bluetooth.hfp.ver=1.6
 ro.qualcomm.bt.hci_transport=smd
+persist.bt.enableAptXHD=true 
 
 # Camera
 camera.lowpower.record.enable=1
