@@ -120,6 +120,10 @@ PRODUCT_PACKAGES += \
 # Disable camera Treble path
 PRODUCT_PROPERTY_OVERRIDES += \
     camera.disable_treble=true
+
+# Disable Vulkan
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.graphics.vulkan.disable=true
  
 # LineageActions
 PRODUCT_PACKAGES += \
