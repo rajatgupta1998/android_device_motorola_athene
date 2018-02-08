@@ -1029,10 +1029,6 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
    group camera system inet input graphics
    writepid /dev/cpuset/system-background/tasks
 
-service sensoors /system/bin/sensorservice
-    class main
-    user root
-
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
     write /sys/class/power_supply/battery/charging_enabled 0
