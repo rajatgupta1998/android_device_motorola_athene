@@ -248,10 +248,6 @@ PRODUCT_PACKAGES += \
     libandroid_net \
     netutils-wrapper-1.0
 
-# IMS
-PRODUCT_PACKAGES += \
-    ims-ext-common
-
 # RCS
 PRODUCT_PACKAGES += \
     rcs_service_aidl \
