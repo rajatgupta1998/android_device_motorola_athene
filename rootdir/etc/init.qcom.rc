@@ -255,6 +255,14 @@ on boot
     chown system system /sys/class/leds/charging/brightness
     chmod 0664 /sys/class/leds/charging/brightness
 
+    # Change the ownership of the torch LED interface
+    chown system system /sys/class/leds/led:switch/brightness
+    chmod 0664 /sys/class/leds/led:switch/brightness
+    chown system system /sys/class/leds/led:torch_0/brightness
+    chmod 0664 /sys/class/leds/led:torch_0/brightness
+    chown system system /sys/class/leds/led:torch_1/brightness
+    chmod 0664 /sys/class/leds/led:torch_1/brightness
+
     # Change permission for backlight
     chmod 0664 /sys/class/leds/lcd-backlight/brightness
 
