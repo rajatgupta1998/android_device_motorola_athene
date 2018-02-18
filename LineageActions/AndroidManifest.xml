@@ -56,7 +56,7 @@
                 android:resource="@drawable/ic_settings_gestures" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/summary_empty" />
+                android:resource="@string/moto_actions_panel_summary" />
         </activity>
 
     </application>

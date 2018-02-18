@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="moto_actions_panel_title">Moto Actions</string>
+    <string name="moto_actions_panel_summary">Special Moto Gestures</string>
 </resources>
