@@ -22,4 +22,28 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <!-- Flag indicating if the sensor for the torch is availablei -->
     <bool name="config_hasChopChop">true</bool>
+
+    <!-- If there is no sysfs-based control mechanism, enable this -->
+    <bool name="useCameraInterface">false</bool>
+
+    <!-- Full path to the sysfs toggle -->
+    <string name="flashDevice" translatable="false">/sys/class/leds/led:switch/brightness</string>
+    <string name="yellowLedDevice" translatable="false">/sys/class/leds/led:torch_0/brightness</string>
+    <string name="whiteLedDevice" translatable="false">/sys/class/leds/led:torch_1/brightness</string>
+
+    <!-- Full path to the sysfs luminosity -->
+    <string name="flashDeviceLuminosity" translatable="false"></string>
+
+    <!-- Off setting -->
+    <integer name="valueOff">0</integer>
+    <!-- On setting -->
+    <integer name="valueOn">1000</integer>
+
+    <!-- Low setting -->
+    <integer name="valueLow">-1</integer>
+    <!-- Middle setting -->
+    <integer name="valueHigh">-1</integer>
+
+    <integer name="ledValueOff">0</integer>
+    <integer name="ledValueOn">200</integer>
 </resources>
