@@ -126,6 +126,7 @@ qcom.hw.aac.encoder=false
 audio.parser.ip.buffer.size=262144
 vendor.audio_hal.period_size=240
 persist.audio.endcall.delay=250
+ro.config.media_vol_steps=25
 
 # Bluetooth
 bluetooth.hfp.client=1
