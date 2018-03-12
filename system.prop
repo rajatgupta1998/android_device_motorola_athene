@@ -218,6 +218,9 @@ ro.sys.fw.dex2oat_thread_count=4
 
 persist.dpm.feature=0
 
+# Trim properties
+ro.vendor.qti.sys.fw.trim_enable_memory=2147483648
+
 # USB
 ro.usb.mtp=2e82
 ro.usb.mtp_adb=2e76
