@@ -58,11 +58,20 @@
         android:key="fp_key"
         android:title="@string/fingerprint_title" >
 
-
         <SwitchPreference
             android:key="fp_home"
-            android:title="@string/fingerprint_as_home_title"
-            android:summary="@string/fingerprint_as_home_summary" />
+            android:title="Fingerprint Home or Lock"
+            android:summary="Enable homebutton or lock features" />
+
+        <ListPreference
+            android:dependency="fp_home"
+            android:title="Fingerprint sensor options"
+            android:summary="Choose to enable homebutton or lock features"
+            android:dialogTitle="Fingerprint sensor options"
+            android:key="fp_keys"
+            android:defaultValue="102"
+            android:entries="@array/fp_keys_listArray"
+            android:entryValues="@array/fp_keys_listValues" />
 
         <SwitchPreference
             android:key="fp_home_wakeup"
