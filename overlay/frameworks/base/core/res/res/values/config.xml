@@ -344,4 +344,23 @@
     <!-- Boolean indicating if current platform supports BLE peripheral mode -->
     <bool name="config_bluetooth_le_peripheral_mode_supported">true</bool>
 
+    <!-- Boolean indicating whether the HWC setColorTransform function can be performed efficiently
+         in hardware. -->
+    <bool name="config_setColorTransformAccelerated">true</bool>
+
+   <!-- Default list of files to pin via Pinner Service -->
+   <string-array translatable="false" name="config_defaultPinnerServiceFiles">
+       <item>"/system/framework/arm64/boot-framework.oat"</item>
+       <item>"/system/framework/arm64/boot-framework.vdex"</item>
+       <item>"/system/framework/oat/arm64/services.odex"</item>
+       <item>"/system/framework/oat/arm64/services.vdex"</item>
+       <item>"/system/framework/arm64/boot.oat"</item>
+       <item>"/system/framework/arm64/boot.vdex"</item>
+       <item>"/system/framework/arm64/boot-core-libart.oat"</item>
+       <item>"/system/framework/arm64/boot-core-libart.vdex"</item>
+   </string-array>
+
+    <!-- Is the notification LED intrusive? Used to decide if there should be a disable option -->
+    <bool name="config_intrusiveNotificationLed">true</bool>
+    
 </resources>
