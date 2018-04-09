@@ -57,12 +57,14 @@
 /* Parameter data */
 static uint32_t DEBUG_LEVEL = 0xff;
 static uint32_t TIMESTAMP = 0;
+static uint32_t LOC_MODEM_EMULATOR = 0;
 
 /* Parameter spec table */
 static const loc_param_s_type loc_param_table[] =
 {
-    {"DEBUG_LEVEL",    &DEBUG_LEVEL, NULL,    'n'},
-    {"TIMESTAMP",      &TIMESTAMP,   NULL,    'n'},
+    {"DEBUG_LEVEL",        &DEBUG_LEVEL,        NULL,    'n'},
+    {"TIMESTAMP",          &TIMESTAMP,          NULL,    'n'},
+    {"LOC_MODEM_EMULATOR", &LOC_MODEM_EMULATOR, NULL,    'n'},
 };
 static const int loc_param_num = sizeof(loc_param_table) / sizeof(loc_param_s_type);
 
@@ -73,6 +75,17 @@ typedef struct loc_param_v_type
     int param_int_value;
     double param_double_value;
 }loc_param_v_type;
+
+/*===========================================================================
+FUNCTION loc_modem_emulator_enabled
+
+DESCRIPTION
+   Provides access to Modem Emulator config item.
+===========================================================================*/
+uint32_t loc_modem_emulator_enabled()
+{
+    return LOC_MODEM_EMULATOR;
+}
 
 /*===========================================================================
 FUNCTION loc_set_config_entry
