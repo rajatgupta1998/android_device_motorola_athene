@@ -1,0 +1,3 @@
+add_lunch_combo candy_athene-userdebug
+add_lunch_combo candy_athene-eng
+add_lunch_combo candy_athene-user
