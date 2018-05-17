@@ -1,3 +1,8 @@
+on early-init
+    # boot with higher frequency, will be reset after boot
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 1516800
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 1209600
+
 on boot
     # add a cpuset for the camera daemon
     # we want all the little cores for camera
@@ -80,7 +85,6 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/min_sample_time 0
     write /sys/devices/system/cpu/cpu0/cpufreq/interactive/boostpulse_duration 0
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_max_freq 1516800
-    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 345600
 
     # enable governor for power cluster
     write /sys/devices/system/cpu/cpu4/online 1
@@ -95,7 +99,6 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 85
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 20000
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration 0
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 307200
 
     # enable thermal & BCL core_control now
     write /sys/module/msm_thermal/core_control/enabled 1
@@ -177,6 +180,10 @@ on property:dev.bootcomplete=1
     write /sys/block/dm-0/queue/read_ahead_kb 512
 
 on property:sys.boot_completed=1
+    # Reset CPU minimum frequency
+    write /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq 345600
+    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 307200
+
     # Change CPU governor to interactive after boot
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor	interactive
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor interactive
