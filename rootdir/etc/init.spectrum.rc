@@ -46,7 +46,6 @@ on property:persist.spectrum.profile=0
     write /sys/module/cpu_boost/parameters/input_boost_freq "0:1094400 4:998400 5:998400"
     write /sys/module/cpu_boost/parameters/boost_ms 0
     write /sys/module/cpu_boost/parameters/input_boost_ms 1500
-    write /sys/module/msm_performance/parameters/touchboost 0
 
 # Performance
 on property:persist.spectrum.profile=1
@@ -57,6 +56,7 @@ on property:persist.spectrum.profile=1
 on property:persist.spectrum.profile=2
     write /sys/devices/system/cpu/cpu0/cpufreq/scaling_governor powersave
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor powersave
+    write /sys/module/cpu_boost/parameters/input_boost_enabled 0
 
 # Gaming
 on property:persist.spectrum.profile=3
