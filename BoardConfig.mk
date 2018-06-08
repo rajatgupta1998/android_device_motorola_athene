@@ -75,8 +75,8 @@ BOARD_FLASH_BLOCK_SIZE := 131072
 
 # Crypto
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH := $(LOCAL_PATH)/cryptfs_hw
-#TW_INCLUDE_CRYPTO := true
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/cryptfs_hw
+TW_INCLUDE_CRYPTO := true
 
 # Keymaster
 TARGET_PROVIDES_KEYMASTER := true
