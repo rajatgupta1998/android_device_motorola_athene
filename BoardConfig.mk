@@ -29,15 +29,17 @@ TARGET_BOOTLOADER_BOARD_NAME := MSM8952
 TARGET_NO_BOOTLOADER := true
 
 # Architecture
-TARGET_ARCH := arm
-TARGET_ARCH_VARIANT := armv7-a-neon
-TARGET_CPU_ABI := armeabi-v7a
-TARGET_CPU_ABI2 := armeabi
+TARGET_ARCH := arm64
+TARGET_ARCH_VARIANT := armv8-a
+TARGET_CPU_ABI := arm64-v8a
+TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := cortex-a53
-TARGET_CPU_SMP := true
-ARCH_ARM_HAVE_TLS_REGISTER := true
-TARGET_GLOBAL_CFLAGS += -mfpu=neon -mfloat-abi=softfp
-TARGET_GLOBAL_CPPFLAGS += -mfpu=neon -mfloat-abi=softfp
+TARGET_2ND_ARCH := arm
+TARGET_2ND_ARCH_VARIANT := armv7-a-neon
+TARGET_2ND_CPU_ABI := armeabi-v7a
+TARGET_2ND_CPU_ABI2 := cortex-a53
+TARGET_CPU_CORTEX_A53 := true
+TARGET_USES_64_BIT_BINDER := true
 
 # Kernel
 BOARD_KERNEL_CMDLINE := console=ttyHSL0,115200,n8 androidboot.console=ttyHSL0 androidboot.hardware=qcom msm_rtb.filter=0x237 ehci-hcd.park=3 androidboot.bootdevice=7824900.sdhci lpm_levels.sleep_disabled=1 earlyprintk
@@ -47,11 +49,13 @@ BOARD_KERNEL_SEPARATED_DT := true
 TARGET_CUSTOM_DTBTOOL := dtbTool_custom
 BOARD_DTBTOOL_ARGS := --force-v3 --motorola 1
 BOARD_MKBOOTIMG_ARGS := --ramdisk_offset 0x01000000 --tags_offset 0x00000100
-TARGET_KERNEL_ARCH := arm
+TARGET_KERNEL_HEADER_ARCH := arm64
+TARGET_KERNEL_ARCH := arm64
+BOARD_KERNEL_IMAGE_NAME := Image.gz
 TARGET_KERNEL_CONFIG := athene_defconfig
 TARGET_KERNEL_SOURCE := kernel/motorola/msm8952
-KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/arm/arm-eabi-4.8/bin
-TARGET_KERNEL_CROSS_COMPILE_PREFIX := arm-eabi-
+KERNEL_TOOLCHAIN := $(ANDROID_BUILD_TOP)/prebuilts/gcc/$(HOST_OS)-x86/aaarch64/aarch64-linux-android-4.9/bin
+TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-androidkernel-
 
 # Filesystem
 BOARD_BOOTIMAGE_PARTITION_SIZE := 16777216        # 16384 * 1024 mmcblk0p28
@@ -78,6 +82,7 @@ TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 RECOVERY_VARIANT := twrp
 BOARD_HAS_NO_SELECT_BUTTON := true
 TARGET_RECOVERY_FSTAB := $(LOCAL_PATH)/rootdir/etc/fstab.qcom
+LZMA_RAMDISK_TARGETS := recovery
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
 TARGET_RECOVERY_QCOM_RTC_FIX := true
