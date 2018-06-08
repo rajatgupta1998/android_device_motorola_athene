@@ -1,6 +1,7 @@
 [
   {
-    "repository":  "android_kernel_motorola_msm8952",
-    "target_path": "kernel/motorola/msm8952"
+    "repository":  "rajatgupta1998/android_kernel_motorola_msm8952",
+    "target_path": "kernel/motorola/msm8952",
+    "revision": "nougat-7.1.2-arm"
   }
 ]

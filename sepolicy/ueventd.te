@@ -1,4 +1,0 @@
-allow ueventd sysfs_fpc:file { open write };
-allow ueventd unlabeled:dir search;
-allow ueventd unlabeled:file { read getattr open };
-allow ueventd vfat:file { read open getattr };
