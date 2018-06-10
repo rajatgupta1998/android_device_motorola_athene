@@ -214,10 +214,6 @@ PRODUCT_PACKAGES += \
     libstagefrighthw \
     libstagefright_soft_flacdec
 
-# OTA
-PRODUCT_PACKAGES += \
-    CandyOTA    
-
 # IPA Manager
 PRODUCT_PACKAGES += \
     ipacm \
