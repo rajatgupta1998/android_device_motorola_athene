@@ -85,16 +85,16 @@ on enable-low-power
     # enable governor for power cluster
     write /sys/devices/system/cpu/cpu4/online 1
     write /sys/devices/system/cpu/cpu4/cpufreq/scaling_governor "interactive"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay 39000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 90
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 80000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 20000
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 806400
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/above_hispeed_delay "0 1094400:20000"
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/go_hispeed_load 92
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_slack 160000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/timer_rate 40000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/hispeed_freq 998400
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/io_is_busy 0
     write /sys/devices/system/cpu/cpu4/cpufreq/interactive/use_sched_load 1
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads "1 806400:90"
-    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 40000
-    write /sys/devices/system/cpu/cpu4/cpufreq/scaling_min_freq 806400
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/target_loads 85
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/min_sample_time 20000
+    write /sys/devices/system/cpu/cpu4/cpufreq/interactive/boostpulse_duration 0
 
     # enable thermal & BCL core_control now
     write /sys/module/msm_thermal/core_control/enabled 1
