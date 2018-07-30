@@ -136,7 +136,7 @@ on enable-low-power
 
     # Enable core control
     write /sys/devices/system/cpu/cpu0/core_ctl/min_cpus 1
-    write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 
+    write /sys/devices/system/cpu/cpu0/core_ctl/max_cpus 4
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_up_thres 32
     write /sys/devices/system/cpu/cpu0/core_ctl/busy_down_thres 18
     write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 100
