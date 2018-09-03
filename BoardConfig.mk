@@ -158,8 +158,9 @@ TARGET_LD_SHIM_LIBS := \
     /system/vendor/lib64/lib-imsvt.so|libshims_ims.so \
     /system/vendor/lib/libizat_core.so|libshims_get_process_name.so \
     /system/vendor/lib/libril-qc-qmi-1.so|rild_socket.so \
+    /system/lib/hw/camera.msm8952.so|libshims_camera.so \
     /system/lib/libandroid.so|libshim_ril.so \
-    /system/lib/libjustshoot.so|libshims_camera.so
+    /system/lib/libjustshoot.so|libshims_shoot.so
 
 # Init
 TARGET_INIT_VENDOR_LIB := libinit_athene
