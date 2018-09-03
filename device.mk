@@ -335,7 +335,7 @@ PRODUCT_PACKAGES += \
     rild_socket
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/rild/rild.rc:system/vendor/etc/init/rild.rc
+    $(LOCAL_PATH)/rild/rild.rc:system/vendor/etc/init/rild.legacy.rc
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.telephony.gsm.xml:system/etc/permissions/android.hardware.telephony.gsm.xml
