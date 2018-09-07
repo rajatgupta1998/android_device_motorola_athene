@@ -41,7 +41,6 @@ LOCAL_SHARED_LIBRARIES := \
 
 LOCAL_STATIC_LIBRARIES := libscrypt_static
 LOCAL_C_INCLUDES := external/scrypt/lib/crypto
-LOCAL_INIT_RC := gatekeeperd.rc
 LOCAL_32_BIT_ONLY := true
 include $(BUILD_EXECUTABLE)
 
