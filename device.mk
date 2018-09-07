@@ -171,6 +171,10 @@ PRODUCT_PACKAGES += \
     FMRadio \
     libfmjni
 
+# Gatekeeper
+PRODUCT_PACKAGES += \
+    gatekeeperd_32
+
 # GPS
 PRODUCT_PACKAGES += \
     libgps.utils \
