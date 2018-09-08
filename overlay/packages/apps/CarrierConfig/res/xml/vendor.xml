@@ -532,6 +532,7 @@
         <int name="smsToMmsTextThreshold" value="6" />
         <int name="moto_back_to_auto_network_selection_timer" value="300000" />
         <boolean name="prefer_2g_bool" value="false" />
+        <boolean name="carrier_volte_available_bool" value="true" />
     </carrier_config>
     <carrier_config mcc="405">
         <boolean name="enableGroupMms" value="false" />
