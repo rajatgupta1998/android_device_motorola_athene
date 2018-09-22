@@ -187,7 +187,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     libshims_ims
 
-# HIDL 
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
     android.hidl.manager@1.0
