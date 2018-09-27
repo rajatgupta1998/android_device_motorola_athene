@@ -309,23 +309,19 @@ on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
     
-    mount_all ./fstab.qcom
+    mount_all ./fstab.qcom --early
 
     # Mount customize partion
     wait /dev/block/bootdevice/by-name/customize
     mount ext4 /dev/block/bootdevice/by-name/customize /customize ro discard nosuid nodev noatime nodiratime noexec defcontext=u:object_r:user_config_file:s0
 
-    # This partition is used by moto for their system apps. Mounting this breaks boot for some.
-    # wait /dev/block/bootdevice/by-name/oem
-    # mount ext4 /dev/block/bootdevice/by-name/oem /oem ro nosuid nodev context=u:object_r:oemfs:s0
-
     wait /dev/block/bootdevice/by-name/dsp
     mount ext4 /dev/block/bootdevice/by-name/dsp /dsp nosuid nodev barrier=1
 
     mkdir /persist/data 0700  system system
-    restorecon_recursive   /persist
+    restorecon_recursive /persist
 
-    restorecon_recursive   /dsp
+    restorecon_recursive /dsp
 
     # use /persist as phony PDS partition
     symlink /persist /pds
@@ -363,6 +359,8 @@ on post-fs
     chown oem_5004 oem_5004 /persist/bt/bt_bdaddr
     chmod 0664 /persist/bt/bt_bdaddr
     chmod 0600 /persist/whisper/whisper_only/vector0.bin
+
+    mount_all fstab.qcom --late
 
 on post-fs-data
     mkdir /data/vendor/tombstones 0771 system system
