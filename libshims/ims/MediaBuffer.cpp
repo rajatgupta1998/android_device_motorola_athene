@@ -73,6 +73,8 @@ int _ZNK7android11MediaBuffer8refcountEv(android::MediaBuffer *self)
     return self->refcount();
 }
 
+void _ZNK7android11MediaBuffer13graphicBufferEv() {}
+
 #ifdef __cplusplus
 }
 #endif
