@@ -363,13 +363,19 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/seccomp/mediaextractor-seccomp.policy:$(TARGET_COPY_OUT_VENDOR)/etc/seccomp_policy/mediaextractor.policy
 
 # Sensors
-PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/sensors/sensor_def_qcomdev.conf:system/etc/sensors/sensor_def_qcomdev.conf \
-    $(LOCAL_PATH)/sensors/hals.conf:system/etc/sensors/hals.conf
-
 PRODUCT_PACKAGES += \
     android.hardware.sensors@1.0-impl \
-    sensorservice_32
+    libsensorhub \
+    motosh \
+    sensorhub.msm8952 \
+    sensors.msm8952 \
+    sensors.rp \
+    sensors.tof \
+    sensors.tof.vl53l0
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/sensors/sensor_def_qcomdev.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/sensor_def_qcomdev.conf \
+    $(LOCAL_PATH)/configs/sensors/hals.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sensors/hals.conf
 
 # Stlport
 PRODUCT_PACKAGES += \
