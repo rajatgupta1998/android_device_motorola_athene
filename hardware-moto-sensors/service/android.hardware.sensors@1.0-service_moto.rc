@@ -3,3 +3,7 @@ service sensors-hal-1-0 /vendor/bin/hw/android.hardware.sensors@1.0-service_moto
     user system
     group compass input misc system wakelock
     capabilities BLOCK_SUSPEND SYS_NICE
+
+service sensorservice /system/bin/sensorservice
+    class main
+    user root
