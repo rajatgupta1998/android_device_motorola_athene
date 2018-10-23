@@ -19,9 +19,7 @@ DEVICE_PATH := device/motorola/athene
 BOARD_VENDOR := motorola-qcom
 
 # AIDs and CAPS
-TARGET_FS_CONFIG_GEN := \
-    $(DEVICE_PATH)/fs_config/mot_aids.txt \
-    $(DEVICE_PATH)/fs_config/file_caps.txt
+TARGET_FS_CONFIG_GEN := $(DEVICE_PATH)/configs/config.fs
 
 # Asserts
 TARGET_OTA_ASSERT_DEVICE := athene,athene_f,xt1621,xt1622,xt1625,xt1626,xt1640,xt1641,xt1642,xt1643,xt1644
