@@ -25,8 +25,8 @@
 # ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 #
 
-import init.qcom.power.rc
-import init.mmi.usb.rc
+import /vendor/etc/init/hw/init.qcom.power.rc
+import /vendor/etc/init/hw/init.mmi.usb.rc
 
 on early-init
     mount debugfs debugfs /sys/kernel/debug
@@ -139,7 +139,7 @@ on boot
     chown radio radio /data/vendor/radio/db_check_done
     chmod 0660 /data/vendor/radio/db_check_done
 
-    start rmt_storage
+    start vendor.rmt_storage
 
     # Set graphic node permissions
     chown system graphics /sys/class/graphics/fb0/mdp/bw_mode_bitmap
@@ -321,7 +321,7 @@ on fs
     wait /dev/block/platform/soc.0/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc.0/${ro.boot.bootdevice} /dev/block/bootdevice
     
-    mount_all ./fstab.qcom --early
+    mount_all ./vendor/etc/fstab.qcom --early
 
     # Mount customize partion
     wait /dev/block/bootdevice/by-name/customize
@@ -372,7 +372,8 @@ on post-fs
     chmod 0664 /persist/bt/bt_bdaddr
     chmod 0600 /persist/whisper/whisper_only/vector0.bin
 
-    mount_all fstab.qcom --late
+on late-fs
+    mount_all ./vendor/etc/fstab.qcom --late
 
 on post-fs-data
     mkdir /data/vendor/tombstones 0771 system system
@@ -418,18 +419,22 @@ on post-fs-data
     chown system system /data/dpm/nsrm
 
     # Create directory used by audio subsystem
-    mkdir /data/misc/audio 0770 audio audio
+    mkdir /data/vendor/misc/audio 0770 audio audio
+
+    # Create directory for audio delta files
+    mkdir /data/vendor/misc/audio/acdbdata 0770 media audio
+    mkdir /data/vendor/misc/audio/acdbdata/delta 0770 media audio
 
     # Create directory used by the DASH client
     mkdir /data/misc/dash 0770 media audio
 
     # Create directory used by display clients
-    mkdir /data/misc/display 0770 system graphics
+    mkdir /data/vendor/display 0770 system graphics
     mkdir /persist/display 0770 system graphics
 
     # Mounting of persist is moved to 'on emmc-fs' and 'on fs' sections
     # We chown/chmod /persist again so because mount is run as root + defaults
-    chown system system /persist
+    chown root system /persist
     chmod 0771 /persist
 
     chmod 0664 /sys/devices/platform/msm_sdcc.1/polling
@@ -586,16 +591,6 @@ service qfintverify /sbin/qfintverify
     class core
     oneshot
 
-service ssr_setup /system/bin/ssr_setup
-    oneshot
-    disabled
-
-service ss_ramdump /system/bin/subsystem_ramdump
-    class main
-    user radio
-    group log sdcard_rw sdcard_r diag
-    disabled
-
 on property:persist.sys.ssr.restart_level=*
     start ssr_setup
 
@@ -639,7 +634,7 @@ on property:vold.decrypt=trigger_restart_framework
     start config_bluetooth
     start wcnss-service
 
-service cnd /system/bin/cnd
+service vendor.cnd /vendor/bin/cnd
     class main
     socket cnd stream 660 root inet
     group root wakelock
@@ -650,19 +645,19 @@ service dpmd /system/bin/dpmd
     socket dpmd stream 660 root system
     writepid /dev/cpuset/system-background/tasks
 
-service irsc_util /system/vendor/bin/irsc_util "/etc/sec_config"
+service vendor.irsc_util /vendor/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
 
-service imsqmidaemon /system/vendor/bin/imsqmidaemon
+service vendor.imsqmidaemon /vendor/bin/imsqmidaemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
     group radio log diag
     writepid /dev/cpuset/system-background/tasks
 
-service imsdatadaemon /system/vendor/bin/imsdatadaemon
+service vendor.imsdatadaemon /vendor/bin/imsdatadaemon
     class main
     user system
     socket ims_datad stream 0660 system radio
@@ -671,9 +666,9 @@ service imsdatadaemon /system/vendor/bin/imsdatadaemon
     disabled
 
 on property:vendor.ims.QMI_DAEMON_STATUS=1
-    start imsdatadaemon
+    start vendor.imsdatadaemon
 
-service rmt_storage /system/vendor/bin/rmt_storage
+service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
@@ -681,7 +676,7 @@ service rmt_storage /system/vendor/bin/rmt_storage
     shutdown critical
     writepid /dev/cpuset/system-background/tasks
 
-service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
+service vendor.ims_rtp_daemon /vendor/bin/ims_rtp_daemon
     class main
     user system
     socket ims_qmid stream 0660 system radio
@@ -690,7 +685,7 @@ service ims_rtp_daemon /system/vendor/bin/ims_rtp_daemon
     group radio diag inet log
     disabled
 
-service imsrcsservice /system/vendor/bin/imsrcsd
+service vendor.imsrcsservice /vendor/bin/imsrcsd
     class main
     user system
     group radio diag inet log
@@ -698,10 +693,10 @@ service imsrcsservice /system/vendor/bin/imsrcsd
     disabled
 
 on property:vendor.ims.DATA_DAEMON_STATUS=1
-    start ims_rtp_daemon
-    start imsrcsservice
+    start vendor.ims_rtp_daemon
+    start vendor.imsrcsservice
 
-service tftp_server /system/vendor/bin/tftp_server
+service vendor.tftp_server /vendor/bin/tftp_server
     class main
     user root
     writepid /dev/cpuset/system-background/tasks
@@ -724,13 +719,13 @@ service hci_filter_root /system/bin/wcnss_filter
     group bluetooth diag oem_2950
     disabled
  
-service config_bluetooth /system/bin/sh /init.qcom.bt.sh "onboot"
+service config_bluetooth /system/bin/sh /vendor/etc/init.qcom.bt.sh "onboot"
     class core
     user bluetooth
     group bluetooth system
     oneshot
 
-service hciattach /system/bin/sh /system/etc/init.qcom.bt.sh
+service hciattach /system/bin/sh /vendor/etc/init.qcom.bt.sh
     class late_start
     user bluetooth
     group bluetooth net_bt_admin
@@ -771,25 +766,13 @@ service qmuxd /system/bin/qmuxd
     group radio audio bluetooth gps nfc diag wakelock
     writepid /dev/cpuset/system-background/tasks
 
-service netmgrd /system/vendor/bin/netmgrd
+service vendor.netmgrd /vendor/bin/netmgrd
     class main
     user root
     group radio system wakelock
     writepid /dev/cpuset/system-background/tasks
 
-service ipacm-diag /system/bin/ipacm-diag
-    class main
-    user system
-    socket ipacm_log_file dgram 660 system net_admin
-    group net_admin oem_2950
-
-service ipacm /system/bin/ipacm
-    class main
-    user net_admin
-    group net_admin inet
-    writepid /dev/cpuset/system-background/tasks
-
-service qti /system/vendor/bin/qti
+service vendor.qti /vendor/bin/qti
     class main
     user radio
     group radio net_raw oem_2950 usb net_admin
@@ -798,7 +781,7 @@ service qti /system/vendor/bin/qti
 
 on property:ro.use_data_netmgrd=false
     # netmgr not supported on specific target
-    stop netmgrd
+    stop vendor.netmgrd
 
 # Adjust socket buffer to enlarge TCP receive window for high bandwidth
 # but only if ro.data.large_tcp_window_size property is set.
@@ -815,32 +798,13 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     disabled
     oneshot
 
-# This starts as root but later drops down to WIFI_AID just like
-# supplicant. We have changed the name of the service from
-# ptt_logging to wlan_logging
-service wlan_logging /system/bin/ptt_socket_app -d
-    user root
-    class main
-    disabled
-    group wifi log
-    oneshot
-
 service ptt_ffbm /system/bin/ptt_socket_app -f -d
     user root
     group root
     disabled
     oneshot
 
-service cnss_diag /system/bin/cnss_diag -q
-    class late_start
-    user root
-    group root
-    oneshot
-
-service cnss-daemon /system/bin/cnss-daemon -n -l
-    class late_start
-
-service loc_launcher /system/bin/loc_launcher
+service vendor.loc_launcher /vendor/bin/loc_launcher
     #loc_launcher will start as root and set its uid to gps
     class late_start
     group gps inet net_raw oem_2950 net_admin wifi
@@ -863,79 +827,59 @@ service ril-daemon1 /vendor/bin/hw/rild -c 2
     group radio cache inet misc audio log readproc wakelock diag net_raw
     capabilities BLOCK_SUSPEND NET_ADMIN NET_RAW
 
-service rild1-wrapper /system/bin/sh /system/etc/init.qcom.ril.sh
+service rild1-wrapper /system/bin/sh /vendor/etc/init.qcom.ril.sh
     class late_start
     user root
     group root
     oneshot
 
-service ssr_diag /system/bin/ssr_diag
-    class late_start
-    user system
-    group system
-    disabled
-
-service diag_mdlog_start /system/bin/diag_mdlog
-    class late_start
-    user shell
-    group system diag sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service diag_mdlog_stop /system/bin/diag_mdlog -k
-    class late_start
-    user shell
-    group system diag sdcard_rw sdcard_r media_rw
-    disabled
-    oneshot
-
-service qseeproxydaemon /system/vendor/bin/qseeproxydaemon
+service vendor.qseeproxydaemon /vendor/bin/qseeproxydaemon
     class late_start
     user system
     group system
 
 # Start Sensor daemon
-service motosh /system/bin/motosh boot
+service vendor.motosh /vendor/bin/motosh boot
     class late_start
     user compass
     group compass misc input
     oneshot
 
-service mmi-boot-sh /init.mmi.boot.sh
+service mmi-boot-sh /vendor/etc/init.mmi.boot.sh
     class core
     user root
     oneshot
 
-service mmi-laser-sh  /init.mmi.laser.sh
-    class core
-    user root
-    oneshot
-    disabled
-
-service mmi-touch-sh /system/bin/sh /init.mmi.touch.sh
-    class core
-    user root
-    oneshot
-
-service oem-hw-sh /init.oem.hw.sh
+service mmi-laser-sh  /vendor/etc/init.mmi.laser.sh
     class core
     user root
     oneshot
     disabled
 
-service touch-dead-sh /init.oem.hw.sh -f
+service mmi-touch-sh /system/bin/sh /vendor/etc/init.mmi.touch.sh
+    class core
+    user root
+    oneshot
+
+service oem-hw-sh /vendor/etc/init.oem.hw.sh
+    class core
+    user root
+    oneshot
+    disabled
+
+service touch-dead-sh /vendor/etc/init.oem.hw.sh -f
     class main
     user root
     oneshot
     disabled
 
-service touch-ready-sh /init.oem.hw.sh -r
+service touch-ready-sh /vendor/etc/init.oem.hw.sh -r
     class main
     user root
     oneshot
     disabled
 
-service oem-hw-config-sh /init.oem.hw.sh -p
+service oem-hw-config-sh /vendor/etc/init.oem.hw.sh -p
     class main
     user root
     oneshot
@@ -1009,12 +953,7 @@ service hw_revs /system/bin/hardware_revisions.sh
     group system
     oneshot
 
-service dropboxd /system/bin/dropboxd
-    class late_start
-    user diag
-    group diag
-
-service thermal-com /system/vendor/bin/thermal-engine --minimode
+service vendor.thermal-com /vendor/bin/thermal-engine --minimode
     class main
     user root
     disabled
@@ -1076,19 +1015,19 @@ service per_mgr /system/bin/pm-service
     group system
     writepid /dev/cpuset/system-background/tasks
 
-service per_proxy /system/vendor/bin/pm-proxy
+service vendor.per_proxy /vendor/bin/pm-proxy
     class core
     user system
     group system
     disabled
 
 on property:init.svc.per_mgr=running
-    start per_proxy
+    start vendor.per_proxy
 
 on property:sys.shutdown.requested=*
-    stop per_proxy
+    stop vendor.per_proxy
 
-service ppd /system/vendor/bin/mm-pp-daemon
+service vendor.ppd /vendor/bin/mm-pp-daemon
     class late_start
     disabled
     user system
@@ -1107,20 +1046,20 @@ service wcnss-service /system/bin/wcnss_service
     group system wifi radio
     oneshot
 
-service qseecomd /system/bin/qseecomd
+service vendor.qseecomd /vendor/bin/qseecomd
     class core
     user root
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service perfd /system/vendor/bin/perfd
+service vendor.perfd /vendor/bin/perfd
    class main
    user root
    socket perfd seqpacket 0666 root system
    disabled
    writepid /dev/cpuset/system-background/tasks
 
-service thermal-engine /system/vendor/bin/thermal-engine
+service vendor.thermal-engine /vendor/bin/thermal-engine
     class main
     user root
     socket thermal-send-client stream 0666 system system
@@ -1130,7 +1069,7 @@ service thermal-engine /system/vendor/bin/thermal-engine
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service vendor.time_daemon /system/vendor/bin/time_daemon
+service vendor.time_daemon /vendor/bin/time_daemon
     class late_start
     user root
     group root
@@ -1171,4 +1110,4 @@ on moto-charger
 
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
-    swapon_all ./fstab.qcom
+    swapon_all ./vendor/etc/fstab.qcom
