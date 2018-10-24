@@ -40,6 +40,18 @@ group: AID_SYSTEM
 mode: 0755
 caps: NET_BIND_SERVICE
 
+[firmware/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
+[persist/]
+mode: 0771
+user: AID_SYSTEM
+group: AID_SYSTEM
+caps: 0
+
 [AID_VENDOR_MOT_ACCY]
 value: 5000
 
