@@ -202,10 +202,6 @@ PRODUCT_PACKAGES += \
 # Vibrator
 PRODUCT_PACKAGES += \
     android.hardware.vibrator@1.0-impl
- 
-# Bluetooth
-PRODUCT_PACKAGES += \
-    libbt-vendor 
 
 # Memtrack HAL
 PRODUCT_PACKAGES += \
