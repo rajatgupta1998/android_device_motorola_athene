@@ -20,6 +20,9 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/languages_full.mk)
 # Also get non-open-source specific aspects if available
 $(call inherit-product, vendor/motorola/athene/athene-vendor.mk)
 
+# Device was shipped with M
+$(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_m.mk)
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     $(LOCAL_PATH)/overlay \
