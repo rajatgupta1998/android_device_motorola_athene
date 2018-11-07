@@ -889,7 +889,6 @@ service msm_irqbalance /vendor/bin/msm_irqbalance -f /vendor/etc/msm_irqbalance.
     class core
     user root
     group root
-    disabled
 
 on property:hw.touch.status="dead"
     # start touch-dead-sh
