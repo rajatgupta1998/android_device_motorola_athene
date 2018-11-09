@@ -1,6 +1,6 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 
-PATH=/sbin:/system/sbin:/system/bin:/system/xbin
+PATH=/sbin:/vendor/sbin:/vendor/bin:/vendor/xbin
 export PATH
 
 while getopts ds op;
@@ -103,7 +103,7 @@ unset readiness
 
 device_property=ro.hw.device
 hwrev_property=ro.hw.revision
-firmware_path=/system/etc/firmware
+firmware_path=/vendor/etc/firmware
 
 let dec_cfg_id_boot=0; dec_cfg_id_latest=0;
 

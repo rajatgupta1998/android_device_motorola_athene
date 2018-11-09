@@ -1,5 +1,5 @@
-#!/system/bin/sh
-export PATH=/system/xbin:$PATH
+#!/vendor/bin/sh
+export PATH=/vendor/xbin:$PATH
 
 multisim=`getprop persist.radio.multisim.config`
 

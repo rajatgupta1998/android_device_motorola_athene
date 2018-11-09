@@ -153,8 +153,8 @@ TARGET_QCOM_NO_FM_FIRMWARE := true
 
 # Shims
 TARGET_LD_SHIM_LIBS := \
-    /system/vendor/lib64/lib-imsvt.so|libshims_ims.so \
-    /system/vendor/lib/libril-qc-qmi-1.so|rild_socket.so \
+    /vendor/lib64/lib-imsvt.so|libshims_ims.so \
+    /vendor/lib/libril-qc-qmi-1.so|rild_socket.so \
     /system/lib/hw/camera.msm8952.so|libshims_camera.so \
     /system/lib/libandroid.so|libshim_ril.so \
     /system/lib/libjustshoot.so|libshims_shoot.so

@@ -1,7 +1,7 @@
-#!/system/bin/sh
+#!/vendor/bin/sh
 
 # We take this from cpuinfo because hex "letters" are lowercase there
-set -A cinfo `cat /proc/cpuinfo | /system/bin/grep Revision`
+set -A cinfo `cat /proc/cpuinfo | /vendor/bin/grep Revision`
 hw=${cinfo[2]#?}
 
 # Now "cook" the value so it can be matched against devtree names
