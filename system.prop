@@ -68,6 +68,7 @@ ro.telephony.call_ring.multiple=false
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
 persist.dbg.wfc_avail_ovr=1
+persist.radio.add_power_save=1
 
 # RmNet Data
 persist.rmnet.data.enable=true
