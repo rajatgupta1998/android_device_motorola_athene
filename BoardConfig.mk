@@ -227,7 +227,7 @@ TARGET_USE_SDCLANG := true
 
 # SELinux
 #include device/qcom/sepolicy/sepolicy.mk
-#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy
+#BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/vendor/sepolicy
 
 # Wifi
 BOARD_HAS_QCOM_WLAN := true
