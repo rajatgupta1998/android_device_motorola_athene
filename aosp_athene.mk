@@ -18,6 +18,9 @@ $(call inherit-product, vendor/aosp/config/common_full_phone.mk)
 
 $(call inherit-product, device/motorola/athene/full_athene.mk)
 
+# GApps
+TARGET_GAPPS_ARCH := arm64
+
 # Boot animation
 TARGET_SCREEN_WIDTH := 1080
 TARGET_SCREEN_HEIGHT := 1920
