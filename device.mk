@@ -189,7 +189,8 @@ PRODUCT_PACKAGES += \
     gps.default \
     libgnss \
     liblocation_api \
-    android.hardware.gnss@1.0-impl-qti \
+    android.hardware.gnss@1.1-impl-qti \
+    android.hardware.gnss@1.1-impl-service \
     libloc_api-rpc-qc
 
 PRODUCT_COPY_FILES += \
