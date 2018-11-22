@@ -11,14 +11,22 @@
     
     <hal format="hidl">
         <name>android.hardware.audio</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.0</version>
+        <interface>
+            <name>IDevicesFactory</name>
+            <instance>default</instance>
+        </interface>    
     </hal>
     
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.0</version>
+        <interface>
+            <name>IEffectsFactory</name>
+            <instance>default</instance>
+        <interface>
     </hal>
     
     <hal format="hidl">
@@ -49,8 +57,12 @@
     
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.4</version>
+        <interface>
+            <name>ICameraProvider</name>
+            <instance>legacy/0</instance>
+        </interface>
     </hal>
     
     <hal format="hidl">
@@ -89,8 +101,12 @@
     
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
+        <interface>
+            <name>IGatekeeper</name>
+            <instance>default</instance>
+        <interface>
     </hal>
     
     <hal format="hidl">
@@ -116,8 +132,12 @@
     
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.1</version>
+        <interface>
+            <name>Icomposer</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     
     <hal format="hidl">
@@ -132,8 +152,11 @@
     
     <hal format="hidl">
         <name>android.hardware.keymaster</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>3.0</version>
+        <interface>
+            <name>IKeymasterDevice</name>
+        </interface>
     </hal>
     
     <hal format="hidl">
@@ -162,7 +185,7 @@
     
     <hal format="hidl">
         <name>android.hardware.memtrack</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IMemtrack</name>
@@ -172,7 +195,7 @@
     
     <hal format="hidl">
         <name>android.hardware.power</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IPower</name>
@@ -225,8 +248,12 @@
     
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
-        <transport arch="32">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>2.0</version>
+        <interface>
+            <name>ISoundTriggerHw</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     
     <hal format="hidl">
@@ -241,7 +268,7 @@
     
     <hal format="hidl">
         <name>android.hardware.vibrator</name>
-        <transport arch="32+64">passthrough</transport>
+        <transport>hwbinder</transport>
         <version>1.0</version>
         <interface>
             <name>IVibrator</name>
