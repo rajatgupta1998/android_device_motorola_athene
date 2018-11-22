@@ -246,7 +246,7 @@ PRODUCT_PACKAGES += \
 
 # OEM
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/vhw.xml:system/etc/vhw.xml
+    $(LOCAL_PATH)/configs/vhw.xml:$(TARGET_COPY_OUT_VENDOR)/etc/vhw.xml
 
 # Media
 PRODUCT_COPY_FILES += \
