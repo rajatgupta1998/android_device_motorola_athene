@@ -122,17 +122,22 @@ on boot
     chmod 0660 /sys/class/rfkill/rfkill0/device/extldo
 
     # Mark the copy complete flag to not completed
-    write /data/misc/radio/copy_complete 0
-    chown radio radio /data/misc/radio/copy_complete
-    chmod 0660 /data/misc/radio/copy_complete
+    write /data/vendor/radio/copy_complete 0
+    chown radio radio /data/vendor/radio/copy_complete
+    chmod 0660 /data/vendor/radio/copy_complete
+
+    # copy prebuilt qcril.db files always
+    copy /vendor/radio/qcril_database/qcril.db /data/vendor/radio/qcril_prebuilt.db
+    chown radio radio /data/vendor/radio/qcril_prebuilt.db
+    chmod 0660 /data/vendor/radio/qcril_prebuilt.db
 
     # File flags for prebuilt ril db file
-    write /data/misc/radio/prebuilt_db_support 1
-    chown radio radio /data/misc/radio/prebuilt_db_support
-    chmod 0400 /data/misc/radio/prebuilt_db_support
-    write /data/misc/radio/db_check_done 0
-    chown radio radio /data/misc/radio/db_check_done
-    chmod 0660 /data/misc/radio/db_check_done
+    write /data/vendor/radio/prebuilt_db_support 1
+    chown radio radio /data/vendor/radio/prebuilt_db_support
+    chmod 0400 /data/vendor/radio/prebuilt_db_support
+    write /data/vendor/radio/db_check_done 0
+    chown radio radio /data/vendor/radio/db_check_done
+    chmod 0660 /data/vendor/radio/db_check_done
 
     start rmt_storage
 
@@ -168,6 +173,13 @@ on boot
 
     #Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
+
+    #Create netmgr log dir
+    mkdir /data/vendor/netmgr 0770 radio radio
+    chmod 0770 /data/vendor/netmgr
+    
+    #Create directory for radio
+    mkdir /data/vendor/radio 0770 system radio
 
     #Remove SUID bit for iproute2 ip tool
     chmod 0755 /system/bin/ip
@@ -638,7 +650,7 @@ service dpmd /system/bin/dpmd
     socket dpmd stream 660 root system
     writepid /dev/cpuset/system-background/tasks
 
-service irsc_util /system/bin/irsc_util "/etc/sec_config"
+service irsc_util /system/vendor/bin/irsc_util "/etc/sec_config"
     class main
     user root
     oneshot
@@ -661,7 +673,7 @@ service imsdatadaemon /system/vendor/bin/imsdatadaemon
 on property:vendor.ims.QMI_DAEMON_STATUS=1
     start imsdatadaemon
 
-service rmt_storage /system/bin/rmt_storage
+service rmt_storage /system/vendor/bin/rmt_storage
     class core
     user root
     group system wakelock
@@ -689,7 +701,7 @@ on property:vendor.ims.DATA_DAEMON_STATUS=1
     start ims_rtp_daemon
     start imsrcsservice
 
-service tftp_server /system/bin/tftp_server
+service tftp_server /system/vendor/bin/tftp_server
     class main
     user root
     writepid /dev/cpuset/system-background/tasks
@@ -759,7 +771,7 @@ service qmuxd /system/bin/qmuxd
     group radio audio bluetooth gps nfc diag wakelock
     writepid /dev/cpuset/system-background/tasks
 
-service netmgrd /system/bin/netmgrd
+service netmgrd /system/vendor/bin/netmgrd
     class main
     user root
     group radio system wakelock
@@ -845,7 +857,7 @@ service atfwd /system/bin/ATFWD-daemon
     user system
     group system radio
 
-service ril-daemon1 /vendor/bin/hw/rild_32 -c 2
+service ril-daemon1 /vendor/bin/hw/rild -c 2
     class main
     user radio
     group radio cache inet misc audio log readproc wakelock diag net_raw
@@ -1064,7 +1076,7 @@ service per_mgr /system/bin/pm-service
     group system
     writepid /dev/cpuset/system-background/tasks
 
-service per_proxy /system/bin/pm-proxy
+service per_proxy /system/vendor/bin/pm-proxy
     class core
     user system
     group system
