@@ -8,7 +8,6 @@
        higher minor version if they have the same name and major version.
 -->
 <manifest version="1.0" type="device">
-    
     <hal format="hidl">
         <name>android.hardware.audio</name>
         <transport>hwbinder</transport>
@@ -18,7 +17,6 @@
             <instance>default</instance>
         </interface>    
     </hal>
-    
     <hal format="hidl">
         <name>android.hardware.audio.effect</name>
         <transport>hwbinder</transport>
@@ -26,9 +24,8 @@
         <interface>
             <name>IEffectsFactory</name>
             <instance>default</instance>
-        <interface>
-    </hal>
-    
+        </interface>
+    </hal>  
     <hal format="hidl">
         <name>android.hardware.biometrics.fingerprint</name>
         <transport>hwbinder</transport>
@@ -37,8 +34,7 @@
             <name>IBiometricsFingerprint</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.bluetooth</name>
         <transport>hwbinder</transport>
@@ -47,14 +43,12 @@
             <name>IBluetoothHci</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.broadcastradio</name>
         <transport arch="32+64">passthrough</transport>
         <version>1.0</version>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.camera.provider</name>
         <transport>hwbinder</transport>
@@ -63,8 +57,7 @@
             <name>ICameraProvider</name>
             <instance>legacy/0</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.cas</name>
         <transport>hwbinder</transport>
@@ -73,8 +66,7 @@
             <name>IMediaCasService</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.configstore</name>
         <transport>hwbinder</transport>
@@ -83,8 +75,7 @@
             <name>ISurfaceFlingerConfigs</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.drm</name>
         <transport>hwbinder</transport>
@@ -97,8 +88,7 @@
             <name>IDrmFactory</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>
@@ -106,9 +96,8 @@
         <interface>
             <name>IGatekeeper</name>
             <instance>default</instance>
-        <interface>
-    </hal>
-    
+        </interface>
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.gnss</name>
         <transport>hwbinder</transport>
@@ -118,8 +107,7 @@
             <instance>default</instance>
             <instance>gnss_vendor</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.graphics.allocator</name>
         <transport>hwbinder</transport>
@@ -128,8 +116,7 @@
             <name>IAllocator</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.graphics.composer</name>
         <transport>hwbinder</transport>
@@ -138,8 +125,7 @@
             <name>Icomposer</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
         <transport arch="32+64">passthrough</transport>
@@ -148,8 +134,7 @@
             <name>IMapper</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.keymaster</name>
         <transport>hwbinder</transport>
@@ -157,8 +142,7 @@
         <interface>
             <name>IKeymasterDevice</name>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.light</name>
         <transport arch="32+64">passthrough</transport>
@@ -167,8 +151,7 @@
             <name>ILight</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.media.omx</name>
         <transport>hwbinder</transport>
@@ -181,8 +164,7 @@
             <name>IOmxStore</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.memtrack</name>
         <transport>hwbinder</transport>
@@ -191,8 +173,7 @@
             <name>IMemtrack</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.power</name>
         <transport>hwbinder</transport>
@@ -201,8 +182,7 @@
             <name>IPower</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.radio</name>
         <transport>hwbinder</transport>
@@ -217,8 +197,7 @@
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.radio.deprecated</name>
         <transport>hwbinder</transport>
@@ -228,14 +207,12 @@
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.renderscript</name>
         <transport arch="32+64">passthrough</transport>
         <version>1.0</version>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.sensors</name>
         <transport>hwbinder</transport>
@@ -244,8 +221,7 @@
             <name>ISensors</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.soundtrigger</name>
         <transport>hwbinder</transport>
@@ -254,8 +230,7 @@
             <name>ISoundTriggerHw</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.usb</name>
         <transport>hwbinder</transport>
@@ -264,8 +239,7 @@
             <name>IUsb</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.vibrator</name>
         <transport>hwbinder</transport>
@@ -275,7 +249,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-    
     <hal format="hidl">
         <name>android.hardware.wifi</name>
         <transport>hwbinder</transport>
@@ -284,8 +257,7 @@
             <name>IWifi</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.wifi.supplicant</name>
         <transport>hwbinder</transport>
@@ -294,8 +266,7 @@
             <name>ISupplicant</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>com.qualcomm.qti.ant</name>
         <transport>hwbinder</transport>
@@ -304,8 +275,7 @@
             <name>IAntHci</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>com.quicinc.cne.api</name>
         <transport>hwbinder</transport>
@@ -314,8 +284,7 @@
             <name>IApiService</name>
             <instance>cnd</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>com.quicinc.cne.server</name>
         <transport>hwbinder</transport>
@@ -324,8 +293,7 @@
             <name>IServer</name>
             <instance>cnd</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>android.hardware.sensors</name>
         <transport>hwbinder</transport>
@@ -335,7 +303,6 @@
             <instance>default</instance>
         </interface>
     </hal>
-
     <hal format="hidl">
         <name>vendor.qti.gnss</name>
         <transport>hwbinder</transport>
@@ -344,8 +311,7 @@
             <name>ILocHidlGnss</name>
             <instance>gnss_vendor</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.alarm</name>
         <transport>hwbinder</transport>
@@ -354,8 +320,7 @@
             <name>IAlarm</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.fm</name>
         <transport>hwbinder</transport>
@@ -364,8 +329,7 @@
             <name>IFmHci</name>
             <instance>default</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.am</name>
         <transport>hwbinder</transport>
@@ -375,8 +339,7 @@
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.ims</name>
         <transport>hwbinder</transport>
@@ -386,8 +349,7 @@
             <instance>imsradio0</instance>
             <instance>imsradio1</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.lpa</name>
         <transport>hwbinder</transport>
@@ -396,8 +358,7 @@
             <name>IUimLpa</name>
             <instance>UimLpa0</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.qcrilhook</name>
         <transport>hwbinder</transport>
@@ -407,8 +368,7 @@
             <instance>oemhook0</instance>
             <instance>oemhook1</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.qtiradio</name>
         <transport>hwbinder</transport>
@@ -418,8 +378,7 @@
             <instance>slot1</instance>
             <instance>slot2</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.uim</name>
         <transport>hwbinder</transport>
@@ -429,8 +388,7 @@
             <instance>Uim0</instance>
             <instance>Uim1</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.uim_remote_client</name>
         <transport>hwbinder</transport>
@@ -440,8 +398,7 @@
             <instance>uimRemoteClient0</instance>
             <instance>uimRemoteClient1</instance>
         </interface>
-    </hal>
-    
+    </hal>    
     <hal format="hidl">
         <name>vendor.qti.hardware.radio.uim_remote_server</name>
         <transport>hwbinder</transport>
@@ -452,5 +409,4 @@
             <instance>uimRemoteServer1</instance>
         </interface>
     </hal>
-
 </manifest>
