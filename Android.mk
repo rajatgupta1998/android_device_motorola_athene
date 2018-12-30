@@ -173,7 +173,6 @@ $(FIRMWARE_WIDEVINE_SYMLINKS): $(LOCAL_INSTALLED_MODULE)
 ALL_DEFAULT_INSTALLED_MODULES += $(FIRMWARE_WIDEVINE_SYMLINKS)
 
 include device/motorola/athene/tftp.mk
-include device/motorola/athene/expat.mk
 
 include $(call all-makefiles-under,$(LOCAL_PATH))
 
