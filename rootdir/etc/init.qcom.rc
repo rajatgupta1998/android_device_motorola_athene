@@ -996,12 +996,6 @@ on property:ro.debuggable=1
     # enable group read/write to /dev/log/kernel
     chmod 0660 /dev/log/kernel
 
-service hw_revs /system/bin/hardware_revisions.sh
-    class late_start
-    user system
-    group system
-    oneshot
-
 service dropboxd /system/bin/dropboxd
     class late_start
     user diag
