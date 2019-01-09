@@ -140,7 +140,7 @@ ro.qualcomm.bt.hci_transport=smd
 camera.lowpower.record.enable=1
 camera.display.lmax=1280x720
 camera.display.umax=1920x1080
-camera.hal1.packagelist=com.skype.raider
+camera.hal1.packagelist=com.skype.raider,com.whatsapp,com.instagram.android
 persist.camera.HAL3.enabled=1
 
 # CNE
