@@ -110,7 +110,7 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_USES_NON_TREBLE_CAMERA := true
 TARGET_CAMERASERVICE_CLOSES_NATIVE_HANDLES := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /system/vendor/bin/mm-qcamera-daemon=26
+    /system/bin/mm-qcamera-daemon=26
 
 # Lineage Hardware
 BOARD_HARDWARE_CLASS += \
