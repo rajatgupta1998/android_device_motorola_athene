@@ -68,7 +68,7 @@ TW_INCLUDE_CRYPTO := true
 TARGET_KEYMASTER_WAIT_FOR_QSEE := true
 RECOVERY_VARIANT := twrp
 TARGET_HW_DISK_ENCRYPTION := true
-TARGET_CRYPTFS_HW_PATH := $(LOCAL_PATH)/cryptfs_hw
+TARGET_CRYPTFS_HW_PATH := vendor/qcom/opensource/commonsys/cryptfs_hw
 
 # Recovery
 LZMA_RAMDISK_TARGETS := recovery
