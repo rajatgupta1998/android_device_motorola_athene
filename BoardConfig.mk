@@ -28,8 +28,6 @@ TARGET_OTA_ASSERT_DEVICE := athene,athene_f,xt1621,xt1622,xt1625,xt1626,xt1640,x
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8952
-TARGET_BOARD_PLATFORM_GPU := qcom-adreno405
-
 TARGET_CPU_CORTEX_A53 := true
 
 # Bootloader
