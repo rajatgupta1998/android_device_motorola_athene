@@ -122,7 +122,6 @@ VSYNC_EVENT_PHASE_OFFSET_NS := 6000000
 MAX_EGL_CACHE_KEY_SIZE := 12*1024
 MAX_EGL_CACHE_SIZE := 2048*1024
 
-HAVE_ADRENO_SOURCE := false
 OVERRIDE_RS_DRIVER := libRSDriver_adreno.so
 
 # Enable dexpreopt to speed boot time
