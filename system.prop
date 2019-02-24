@@ -147,9 +147,6 @@ persist.cne.feature=1
 persist.sys.cnd.iwlan=1
 persist.cne.logging.qxdm=0
 
-# HWUI
-ro.hwui.texture_cache_size=40
-
 # set max background services
 ro.config.max_starting_bg=8
 
