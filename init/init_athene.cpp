@@ -126,10 +126,6 @@ void vendor_load_properties()
 
 /* Target-Specific Dalvik Heap Configuration */
 static void target_ram(void) {
-    std::string ram;
-
-    ram = android::base::GetProperty("ro.boot.ram", "");
-
     property_set("dalvik.vm.heapstartsize", "8m");
     property_set("dalvik.vm.heapgrowthlimit", "192m");
     property_set("dalvik.vm.heapsize", "384m");
