@@ -15,7 +15,6 @@ vendor/lib/libactuator_mot_lc898212xd.so
 vendor/lib/libactuator_rohm_bu64243gwz.so
 
 # Audio
-bin/audiod
 etc/acdbdata/Bluetooth_cal.acdb
 etc/acdbdata/General_cal.acdb
 etc/acdbdata/Global_cal.acdb

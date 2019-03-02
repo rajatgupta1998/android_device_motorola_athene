@@ -1107,11 +1107,6 @@ service time_daemon /system/bin/time_daemon
     group root
     writepid /dev/cpuset/system-background/tasks
 
-service audiod /system/bin/audiod
-    class late_start
-    user system
-    group system
-
 on charger
     wait /dev/block/bootdevice/by-name/system
     mount ext4 /dev/block/bootdevice/by-name/system /system ro barrier=1
