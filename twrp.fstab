@@ -9,11 +9,12 @@
 /boot           emmc      /dev/block/bootdevice/by-name/boot
 /misc           emmc      /dev/block/bootdevice/by-name/misc
 /firmware       vfat      /dev/block/bootdevice/by-name/modem                   flags=backup=1;display="firmware"
-/persist        ext4      /dev/block/bootdevice/by-name/persist                 flags=backup=1;display="persist"
 
-/fsg            ext4      /dev/block/bootdevice/by-name/fsg                     flags=backup=1;display="FSG"
-/oem            ext4      /dev/block/bootdevice/by-name/oem                     flags=backup=1;display="OEM"
-/dsp            ext4      /dev/block/bootdevice/by-name/dsp                     flags=backup=1;display="DSP"
+/efs1           emmc      /dev/block/bootdevice/by-name/modemst1                flags=backup=1;display="EFS"
+/efs2           emmc      /dev/block/bootdevice/by-name/modemst2                flags=backup=1;subpartitionof=/efs1
+/efsc           emmc      /dev/block/bootdevice/by-name/fsc                     flags=backup=1;subpartitionof=/efs1
+/efsg           emmc      /dev/block/bootdevice/by-name/fsg                     flags=backup=1;subpartitionof=/efs1
+/persist        emmc      /dev/block/bootdevice/by-name/persist                 flags=backup=1;subpartitionof=/efs1
 
 /external_sd    auto      /dev/block/mmcblk1p1                     /dev/block/mmcblk1     flags=display="MicroSD Card";storage;wipeingui;removable
 /usb_otg        auto      /dev/block/sda1                          /dev/block/sda         flags=display="USB-OTG";storage;wipeingui;removable
