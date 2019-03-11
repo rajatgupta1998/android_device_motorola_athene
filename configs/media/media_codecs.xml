@@ -152,17 +152,4 @@
     </Decoders>
     <!-- Video Software  -->
     <Include href="media_codecs_google_video.xml" />
-    <!-- BEGIN Motorola, npaulo, IKSWO-122419, override google h264 Video decoder to solve GTS issue -->
-    <Decoders>
-        <MediaCodec name="OMX.google.h264.decoder" type="video/avc" update="y">
-            <!-- profiles and levels:  ProfileHigh : Level41 -->
-            <Limit name="size" min="16x16" max="1920x1088" />
-            <Limit name="alignment" value="2x2" />
-            <Limit name="block-size" value="16x16" />
-            <Limit name="blocks-per-second" range="1-244800" />
-            <Limit name="bitrate" range="1-12000000" />
-            <Feature name="adaptive-playback" />
-        </MediaCodec>
-    </Decoders>
-    <!-- END IKSWO-122419 -->
 </MediaCodecs>
