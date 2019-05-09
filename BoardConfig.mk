@@ -174,8 +174,8 @@ TARGET_POWERHAL_VARIANT := qcom
 TARGET_PROVIDES_LIBLIGHT := true
 
 # Manifest
-DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/configs/manifest.xml
-DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/configs/compatibility_matrix.xml
+DEVICE_MANIFEST_FILE := $(DEVICE_PATH)/manifest.xml
+DEVICE_MATRIX_FILE   := $(DEVICE_PATH)/compatibility_matrix.xml
 
 # Properties
 TARGET_SYSTEM_PROP += device/motorola/athene/system.prop
