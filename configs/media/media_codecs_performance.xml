@@ -94,7 +94,7 @@
         </MediaCodec>
         <MediaCodec name="OMX.google.h264.decoder" type="video/avc" update="true">
             <Limit name="measured-frame-rate-320x240" range="570-570" />
-            <Limit name="measured-frame-rate-720x480" range="220-220" />
+            <Limit name="measured-frame-rate-720x480" range="97-98" />
             <Limit name="measured-frame-rate-1280x720" range="38-38" />
             <Limit name="measured-frame-rate-1920x1080" range="27-27" />
         </MediaCodec>
