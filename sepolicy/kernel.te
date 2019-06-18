@@ -3,7 +3,6 @@ allow kernel bluetooth:process setsched;
 allow kernel cnd:process setsched;
 allow kernel dataservice_app:process setsched;
 allow kernel debuggerd:process setsched;
-allow kernel fingerprintd:process setsched;
 allow kernel gatekeeperd:process setsched;
 allow kernel hw_block_device:blk_file rw_file_perms;
 allow kernel ims:process setsched;
