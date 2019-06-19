@@ -9,5 +9,5 @@
 #
 
 # fpc1020 "finger present"
-key 614   FPS_DOWN
-key 615   FPS_UP
+key 614   FPS_ONENAV_DOWN
+key 615   FPS_ONENAV_UP
