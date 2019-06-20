@@ -49,7 +49,7 @@
             <instance>widevine</instance>
             <instance>default</instance>
         </interface>
-    </hal
+    </hal>
     <hal format="hidl">
         <name>android.hardware.gatekeeper</name>
         <transport>hwbinder</transport>
@@ -69,13 +69,13 @@
         </interface>
     </hal>
     <hal format="hidl">
-	<name>android.hardware.graphics.composer</name>
-	<transport>hwbinder</transport>
-	<version>2.1</version>
-	<interface>
-	    <name>IComposer</name>
-	    <instance>default</instance>
-	</interface>
+        <name>android.hardware.graphics.composer</name>
+        <transport>hwbinder</transport>
+        <version>2.1</version>
+        <interface>
+            <name>IComposer</name>
+            <instance>default</instance>
+        </interface>
     </hal>
     <hal format="hidl">
         <name>android.hardware.graphics.mapper</name>
@@ -92,6 +92,15 @@
         <version>3.0</version>
         <interface>
             <name>IKeymasterDevice</name>
+            <instance>default</instance>
+        </interface>
+    </hal>
+    <hal format="hidl">
+        <name>android.hardware.power</name>
+        <transport>hwbinder</transport>
+        <version>1.0</version>
+        <interface>
+            <name>IPower</name>
             <instance>default</instance>
         </interface>
     </hal>
