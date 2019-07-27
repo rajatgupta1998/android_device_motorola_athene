@@ -24,6 +24,7 @@ on fs
     chown system system /dev/ion
 
     setprop ro.board.platform msm8952
+    setprop sys.usb.ffs.aio_compat 1
 
 service sbinqseecomd /sbin/qseecomd
     user root
