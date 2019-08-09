@@ -107,7 +107,6 @@ persist.vendor.audio.fluence.speaker=false
 persist.vendor.audio.fluence.voicecall=true
 persist.vendor.audio.fluence.voicecomm=true
 persist.vendor.audio.fluence.voicerec=false
-ro.config.vc_call_vol_steps=8
 ro.qc.sdk.audio.ssr=false
 ro.qc.sdk.audio.fluencetype=none
 tunnel.audio.encode=false
