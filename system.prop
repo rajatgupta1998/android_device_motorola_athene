@@ -181,6 +181,7 @@ vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.narrow.searchrange=1
 persist.media.treble_omx=false
 media.camera.ts.monotonic=1
+media.settings.xml=/system/etc/media_profiles_vendor.xml
 
 # GPS
 persist.mot.gps.conf.from.sim=true
