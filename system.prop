@@ -180,7 +180,6 @@ vidc.enc.dcvs.extra-buff-count=2
 vidc.enc.narrow.searchrange=1
 persist.media.treble_omx=false
 media.camera.ts.monotonic=1
-mm.enable.sec.smoothstreaming=false
 
 # GPS
 persist.mot.gps.conf.from.sim=true
