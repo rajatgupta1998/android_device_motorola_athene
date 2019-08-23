@@ -559,6 +559,12 @@ on post-fs-data
     # Sensor Hub calibration data directory
     mkdir /data/misc/sensorhub 0770 system compass
 
+    #Create directories for Fingerprint
+    mkdir /data/vendor/misc/qti_fp 0770 system system
+    mkdir /data/vendor/misc/qti_fp/bg_estimation 0770 system system
+    mkdir /data/vendor/misc/qti_fp/calib_test 0770 system system
+    mkdir /data/vendor/misc/qti_fp/database 0770 system system
+
     # Required by FingerPrint Cards (FPC) via init so we don't need to give qseecomd or fingerprintd permissions to create them
     mkdir /data/fpc 0700 system system
     mkdir /data/.fps 0770 system fingerp
