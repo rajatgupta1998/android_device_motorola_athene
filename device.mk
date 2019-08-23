@@ -287,6 +287,10 @@ PRODUCT_PACKAGES += \
     ipacm \
     IPACM_cfg.xml
 
+# Perf
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/configs/perf/perfboostsconfig.xml:system/etc/perfboostsconfig.xml
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti
