@@ -845,7 +845,6 @@ lib/libvpplibrary.so
 lib/lib_fpc_tac_shared.so
 lib/lib_mottof.so
 vendor/bin/mm-pp-daemon
-vendor/bin/perfd
 vendor/bin/seemp_healthd
 vendor/lib/hw/flp.default.so
 vendor/lib/libadiertac.so

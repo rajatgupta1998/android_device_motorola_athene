@@ -162,10 +162,6 @@ on enable-low-power
     # Set idle GPU to 240 Mhz
     write /sys/class/kgsl/kgsl-3d0/default_pwrlevel 4
 
-    # Set perfd properties
-    rm /data/system/perfd/default_values
-    start perfd
-
 on property:init.svc.recovery=running
     trigger enable-low-power
 
