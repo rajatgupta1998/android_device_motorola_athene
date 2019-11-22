@@ -67,3 +67,8 @@ LZMA_RAMDISK_TARGETS := recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/twrp.fstab
 TARGET_USERIMAGES_USE_EXT4 := true
 TARGET_USERIMAGES_USE_F2FS := true
+
+# TWRP specific flags
+RECOVERY_SDCARD_ON_DATA := true
+TW_BRIGHTNESS_PATH := /sys/class/leds/lcd-backlight/brightness
+TW_THEME := portrait_hdpi
