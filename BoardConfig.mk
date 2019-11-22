@@ -13,7 +13,7 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
-LOCAL_PATH := device/motorola/athene
+DEVICE_PATH := device/motorola/athene
 
 # Platform
 TARGET_BOARD_PLATFORM := msm8952
