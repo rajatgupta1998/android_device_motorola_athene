@@ -1032,15 +1032,9 @@ service setup_shutdown /system/bin/setup_shutdown.sh
 
 #start camera server as daemon
 service qcamerasvr /system/bin/mm-qcamera-daemon
-   class main
+   class late_start
    user camera
    group camera system inet input graphics
-
-on property:init.svc.media=restarting
-    restart qcamerasvr
-
-on property:init.svc.servicemanager=restarting
-    restart qcamerasvr
 
 # Allow usb charging to be disabled peristently
 on property:persist.usb.chgdisabled=1
