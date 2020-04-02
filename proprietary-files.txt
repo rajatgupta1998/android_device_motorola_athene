@@ -1,11 +1,12 @@
 
 # ADSP
-bin/adsprpcd
+vendor/bin/adsprpcd
 vendor/lib/libadsprpc.so
 vendor/lib/libadsp_default_listener.so
 vendor/lib/libfastcvadsp_stub.so
 vendor/lib/libfastcvopt.so
 vendor/lib/libmdsprpc.so
+vendor/lib/libsdsprpc.so
 
 # ADSP-Modules
 vendor/lib/rfsa/adsp/libapps_mem_heap.so
