@@ -18,7 +18,9 @@ vendor/lib/rfsa/adsp/libobjectMattingApp_skel.so
 vendor/lib/rfsa/adsp/libpanorama_skel.so
 
 # Alarm
+vendor/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 vendor/lib/libalarmservice_jni.so
+vendor/lib/vendor.qti.hardware.alarm@1.0.so
 
 # Audio
 vendor/bin/audioflacapp
