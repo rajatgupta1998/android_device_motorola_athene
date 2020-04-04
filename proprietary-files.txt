@@ -766,6 +766,11 @@ vendor/lib/libRSDriver_adreno.so
 vendor/lib/librs_adreno.so
 vendor/lib/librs_adreno_sha1.so
 
+# Health
+vendor/bin/seemp_healthd
+vendor/lib/libHealthAuthClient.so
+vendor/lib/libHealthAuthJNI.so
+
 # Keystore
 vendor/lib/hw/keystore.msm8952.so
 
@@ -928,7 +933,7 @@ vendor/lib/libwfdcommonutils.so
 vendor/bin/mm-pp-daemon
 vendor/bin/qseeproxydaemon
 vendor/bin/qseeproxysampledaemon
-vendor/bin/seemp_healthd
+
 vendor/lib/hw/flp.default.so
 vendor/lib/lib-rcsimssjni.so
 vendor/lib/libasn1cper.so
@@ -939,13 +944,10 @@ vendor/lib/libavenhancements.so
 vendor/lib/libChamomilePA.so
 vendor/lib/libCommandSvc.so
 vendor/lib/libconnctrl.so
-vendor/lib/libDevHealth.so
 vendor/lib/libdme_main.so
 vendor/lib/libdrmdecrypt.so
 vendor/lib/libExtendedExtractor.so
 vendor/lib/libGPTEE.so
-vendor/lib/libHealthAuthClient.so
-vendor/lib/libHealthAuthJNI.so
 vendor/lib/libHevcSwEncoder.so
 vendor/lib/libjni_dualcamera.so
 vendor/lib/libllvd_smore.so
