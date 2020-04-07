@@ -226,6 +226,16 @@
 		<path name="deep-buffer-playback cirrus" />
 	</path>
 
+	<path name="deep-buffer-playback cirrus-and-bt-sco">
+		<path name="deep-buffer-playback cirrus" />
+		<path name="deep-buffer-playback bt-sco" />
+	</path>
+
+	<path name="deep-buffer-playback cirrus-and-bt-sco-wb">
+		<path name="deep-buffer-playback cirrus" />
+		<path name="deep-buffer-playback bt-sco-wb" />
+	</path>
+
 	<path name="low-latency-playback">
 		<ctl name="PRI_MI2S_RX Audio Mixer MultiMedia5" value="1" />
 	</path>
@@ -254,6 +264,16 @@
 
 	<path name="low-latency-playback afe-proxy">
 		<ctl name="AFE_PCM_RX Audio Mixer MultiMedia5" value="1" />
+	</path>
+
+	<path name="low-latency-playback cirrus-and-bt-sco">
+		<path name="low-latency-playback cirrus" />
+		<path name="low-latency-playback bt-sco" />
+	</path>
+
+	<path name="low-latency-playback cirrus-and-bt-sco-wb">
+		<path name="low-latency-playback cirrus" />
+		<path name="low-latency-playback bt-sco-wb" />
 	</path>
 
 	<path name="audio-tts-playback cirrus">
@@ -289,6 +309,16 @@
 
 	<path name="compress-offload-playback afe-proxy">
 		<ctl name="AFE_PCM_RX Audio Mixer MultiMedia4" value="1" />
+	</path>
+
+	<path name="compress-offload-playback cirrus-and-bt-sco">
+		<path name="compress-offload-playback cirrus" />
+		<path name="compress-offload-playback bt-sco" />
+	</path>
+
+	<path name="compress-offload-playback cirrus-and-bt-sco-wb">
+		<path name="compress-offload-playback cirrus" />
+		<path name="compress-offload-playback bt-sco-wb" />
 	</path>
 
 	<path name="audio-record">
@@ -355,6 +385,18 @@
 		<ctl name="VoiceMMode1_Tx Mixer AFE_PCM_TX_MMode1" value="1" />
 	</path>
 
+	<path name="voicemmode1-call cirrus-and-headphones">
+		<path name="voicemmode1-call" />
+	</path>
+
+	<path name="voicemmode1-call cirrus-and-bt-sco">
+		<path name="voicemmode1-call bt-sco" />
+	</path>
+
+	<path name="voicemmode1-call cirrus-and-bt-sco-wb">
+		<path name="voicemmode1-call bt-sco-wb" />
+	</path>
+
 	<path name="voicemmode2-call">
 		<ctl name="PRI_MI2S_RX_Voice Mixer VoiceMMode2" value="1" />
 		<ctl name="VoiceMMode2_Tx Mixer TERT_MI2S_TX_MMode2" value="1" />
@@ -382,6 +424,18 @@
 	<path name="voicemmode2-call afe-proxy">
 		<ctl name="AFE_PCM_RX_Voice Mixer VoiceMMode2" value="1" />
 		<ctl name="VoiceMMode2_Tx Mixer AFE_PCM_TX_MMode2" value="1" />
+	</path>
+
+	<path name="voicemmode2-call cirrus-and-headphones">
+		<path name="voicemmode2-call" />
+	</path>
+
+	<path name="voicemmode2-call cirrus-and-bt-sco">
+		<path name="voicemmode2-call bt-sco" />
+	</path>
+
+	<path name="voicemmode2-call cirrus-and-bt-sco-wb">
+		<path name="voicemmode2-call bt-sco-wb" />
 	</path>
 
 	<path name="afe-proxy-playback afe-proxy">

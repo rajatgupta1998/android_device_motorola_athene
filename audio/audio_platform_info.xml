@@ -71,6 +71,8 @@
 	<device name="SND_DEVICE_OUT_SPEAKER_AND_LINE" backend="cirrus-and-headphones" />
 	<device name="SND_DEVICE_OUT_SPEAKER_SAFE_AND_HEADPHONES" backend="cirrus-and-headphones" />
 	<device name="SND_DEVICE_OUT_SPEAKER_SAFE_AND_LINE" backend="cirrus-and-headphones" />
+	<device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO" backend="cirrus-and-bt-sco"/>
+	<device name="SND_DEVICE_OUT_SPEAKER_AND_BT_SCO_WB" backend="cirrus-and-bt-sco-wb"/>
 </backend_names>
 
 <config_params>
@@ -78,3 +80,4 @@
 </config_params>
 
 </audio_platform_info>
+
