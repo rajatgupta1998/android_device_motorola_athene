@@ -34,6 +34,12 @@ vendor/lib/libaudioalsa.so
 vendor/lib/libaudioparsers.so
 vendor/lib/libdrc.so
 vendor/lib/libsurround_3mic_proc.so
+vendor/lib/libtinycompress_vendor.so
+vendor/lib/soundfx/libaudiopreprocessing.so
+vendor/lib/soundfx/libmmieffectswrapper.so
+vendor/lib/soundfx/libspeakerbundle.so
+vendor/lib/soundfx/libqcomvisualizer.so
+vendor/lib/soundfx/libqcomvoiceprocessing.so
 
 # Bluetooth
 vendor/lib/libbtnv.so
