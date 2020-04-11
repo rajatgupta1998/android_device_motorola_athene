@@ -22,6 +22,11 @@ vendor/framework/vendor.qti.hardware.alarm-V1.0-java.jar
 vendor/lib/libalarmservice_jni.so
 vendor/lib/vendor.qti.hardware.alarm@1.0.so
 
+# ANT
+lib/com.qualcomm.qti.ant@1.0.so
+vendor/lib/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so
+
 # Audio
 vendor/bin/audioflacapp
 vendor/lib/libacdb-fts.so
@@ -42,6 +47,18 @@ vendor/lib/soundfx/libqcomvisualizer.so
 vendor/lib/soundfx/libqcomvoiceprocessing.so
 
 # Bluetooth
+lib/com.qualcomm.qti.bluetooth_audio@1.0.so
+vendor/bin/btnvtool
+vendor/bin/hci_qcomm_init
+vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti
+vendor/bin/wcnss_filter
+vendor/etc/diag_mdlog/Bluetooth_audio_V1.cfg
+vendor/etc/diag_mdlog/Bluetooth_V1.cfg
+vendor/etc/init/android.hardware.bluetooth@1.0-service-qti.rc
+vendor/lib/com.qualcomm.qti.bluetooth_audio@1.0_vendor.so
+vendor/lib/hw/android.hardware.bluetooth@1.0-impl-qti.so
+vendor/lib/libbt-hidlclient.so
+vendor/lib/libbt-vendor.so
 vendor/lib/libbtnv.so
 
 # Bluetooth-AptX
