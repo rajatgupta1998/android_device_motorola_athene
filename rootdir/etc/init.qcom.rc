@@ -385,7 +385,11 @@ on post-fs-data
 
     mkdir /data/misc/ipa 0700 net_admin net_admin
 
+    # Create directories for bluetooth
     mkdir /data/misc/bluetooth 0770 bluetooth bluetooth
+    mkdir /data/vendor/ramdump 0771 root system
+    mkdir /data/vendor/bluetooth 0770 bluetooth bluetooth
+    mkdir /data/vendor/ramdump/bluetooth 0770 bluetooth bluetooth
 
     # Create the directories used by the Wireless subsystem
     mkdir /data/misc/wifi 0770 wifi wifi
@@ -658,7 +662,7 @@ service dpmd /system/bin/dpmd
     socket dpmd stream 660 root system
     writepid /dev/cpuset/system-background/tasks
 
-service config_bt_addr /system/bin/btnvtool -O
+service config_bt_addr /system/vendor/bin/btnvtool -O
     class core
     user bluetooth
     group bluetooth radio
@@ -711,7 +715,7 @@ on property:wc_transport.start_root=true
 on property:wc_transport.start_root=false
     stop hci_filter_root
 
-service hci_filter_root /system/bin/wcnss_filter
+service hci_filter_root /system/vendor/bin/wcnss_filter
     class late_start
     user bluetooth
     group bluetooth diag oem_2950
