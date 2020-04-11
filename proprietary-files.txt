@@ -62,9 +62,8 @@ vendor/lib/libbt-vendor.so
 vendor/lib/libbtnv.so
 
 # Bluetooth-AptX
-lib/libbt-aptX-ARM-4.2.2.so
-vendor/lib/libaptX-1.0.0-rel-Android21-ARMv7A.so
-vendor/lib/libaptXScheduler.so
+lib/libaptXHD_encoder.so
+lib/libaptX_encoder.so
 
 # CNE
 etc/cne/andsfCne.xml
