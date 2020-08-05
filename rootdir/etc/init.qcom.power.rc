@@ -21,18 +21,17 @@ on enable-low-power
     # HMP scheduler settings
     write /proc/sys/kernel/sched_window_stats_policy 3
     write /proc/sys/kernel/sched_ravg_hist_size 3
-    write /proc/sys/kernel/sched_ravg_window 20000000
 
     # HMP Task packing settings
     write /proc/sys/kernel/sched_small_task 20
-    write /sys/devices/system/cpu/cpu0/sched_mostly_idle_load 29
-    write /sys/devices/system/cpu/cpu1/sched_mostly_idle_load 29
-    write /sys/devices/system/cpu/cpu2/sched_mostly_idle_load 29
-    write /sys/devices/system/cpu/cpu3/sched_mostly_idle_load 29
-    write /sys/devices/system/cpu/cpu4/sched_mostly_idle_load 29
-    write /sys/devices/system/cpu/cpu5/sched_mostly_idle_load 29
-    write /sys/devices/system/cpu/cpu6/sched_mostly_idle_load 29
-    write /sys/devices/system/cpu/cpu7/sched_mostly_idle_load 29
+    write /sys/devices/system/cpu/cpu0/sched_mostly_idle_load 30
+    write /sys/devices/system/cpu/cpu1/sched_mostly_idle_load 30
+    write /sys/devices/system/cpu/cpu2/sched_mostly_idle_load 30
+    write /sys/devices/system/cpu/cpu3/sched_mostly_idle_load 30
+    write /sys/devices/system/cpu/cpu4/sched_mostly_idle_load 30
+    write /sys/devices/system/cpu/cpu5/sched_mostly_idle_load 30
+    write /sys/devices/system/cpu/cpu6/sched_mostly_idle_load 30
+    write /sys/devices/system/cpu/cpu7/sched_mostly_idle_load 30
 
     write /sys/devices/system/cpu/cpu0/sched_mostly_idle_nr_run 3
     write /sys/devices/system/cpu/cpu1/sched_mostly_idle_nr_run 3
@@ -141,9 +140,6 @@ on enable-low-power
     write /sys/devices/system/cpu/cpu0/core_ctl/offline_delay_ms 100
     write /sys/devices/system/cpu/cpu0/core_ctl/is_big_cluster 1
 
-    # RPS
-    write /sys/class/net/rmnet_ipa0/queues/rx-0/rps_cpus "f0"
-
     # Enable dynamic clock gating
     write /sys/module/lpm_levels/lpm_workarounds/dynamic_clock_gating 1
     # Enable timer migration to little cluster
@@ -151,12 +147,13 @@ on enable-low-power
 
     # Process reclaim
     write /sys/module/process_reclaim/parameters/enable_process_reclaim 1
-    write /sys/module/process_reclaim/parameters/pressure_min 10
-    write /sys/module/process_reclaim/parameters/per_swap_size 1024
+    write /sys/module/process_reclaim/parameters/pressure_min 50
+    write /sys/module/process_reclaim/parameters/per_swap_size 512
     write /sys/module/process_reclaim/parameters/pressure_max 70
     write /sys/module/process_reclaim/parameters/swap_opt_eff 30
 
     write /sys/module/lowmemorykiller/parameters/enable_adaptive_lmk 1
+    write /sys/module/lowmemorykiller/parameters/minfree "15360,19200,23040,26880,34415,43737"
     write /sys/module/lowmemorykiller/parameters/vmpressure_file_min 53059
 
     # Set idle GPU to 240 Mhz
@@ -167,7 +164,7 @@ on property:init.svc.recovery=running
 
 on property:dev.bootcomplete=1
     trigger enable-low-power
-    write /sys/block/dm-0/queue/read_ahead_kb 512
+    write /sys/block/mmcblk0/queue/read_ahead_kb 128
     setprop sys.io.scheduler "cfq"
 
 on property:sys.boot_completed=1
