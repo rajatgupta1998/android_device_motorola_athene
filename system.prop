@@ -239,13 +239,6 @@ drm.service.enabled=true
 net.tcp.2g_init_rwnd=10
 wifi.interface=wlan0
 
-# Play Store
-ro.com.google.clientidbase=android-motorola
-ro.com.google.clientidbase.ms=android-motorola
-ro.com.google.clientidbase.am=android-motorola
-ro.com.google.clientidbase.gmm=android-motorola
-ro.com.google.clientidbase.yt=android-motorola
-
 #Enable delay service restart
 ro.am.reschedule_service=true
 
